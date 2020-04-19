@@ -3,6 +3,14 @@
 
 module.exports = function(config) {
   config.set({
+    client: {
+      jasmine: {
+        random: false,
+        // seed: '4321',
+        stopOnFailure: true,
+        failFast: true
+      }
+    },
 
     // preprocess coffeescript
     preprocessors: {
@@ -28,7 +36,7 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
+    reporters: ['spec'],
 
 
     // web server port
