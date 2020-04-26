@@ -1,12 +1,11 @@
-var gulp = require('gulp');
+const { task, src, dest, series, parallel, pipe, watch } = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
 var browserify = require('browserify');
 var vsource    = require('vinyl-source-stream');
 var buffer     = require('vinyl-buffer');
-var watch = require('gulp-watch');
-var KarmaServer = require('karma').Server;
+var karma = require('karma');
 
 var builds = {
   core:   'build/shadergraph-core.js',
@@ -42,8 +41,8 @@ var test = [
   'test/**/*.spec.coffee',
 ]);
 
-gulp.task('browserify', function () {
-  return gulp.src('src/index.coffee', { read: false })
+task('browserify', function () {
+  return src('src/index.coffee', { read: false })
       .pipe(browserify({
         debug: false,
         //detectGlobals: false,
@@ -54,10 +53,10 @@ gulp.task('browserify', function () {
       .pipe(rename({
         extname: ".js"
       }))
-      .pipe(gulp.dest('.tmp/'))
+      .pipe(dest('.tmp/'))
 });
 
-gulp.task('coffee2js', function() {
+task('coffee2js', function() {
 // set up the browserify instance on a task basis
   var b = browserify({
     entries: 'src/index.coffee',
@@ -71,88 +70,100 @@ gulp.task('coffee2js', function() {
   return b.bundle()
     .pipe(vsource('index.js'))
     .pipe(buffer())
-    .pipe(gulp.dest('.tmp/'));
+    .pipe(uglify())
+    .pipe(dest('.tmp/'));
 });
 
-gulp.task('css', function () {
-  return gulp.src(css)
+task('css', function () {
+  return src(css)
     .pipe(concat(builds.css))
-    .pipe(gulp.dest('.'));
+    .pipe(dest('.'));
 });
 
-gulp.task('core', function () {
-  return gulp.src(core)
+task('core', function () {
+  return src(core)
     .pipe(concat(builds.core))
-    .pipe(gulp.dest('.'));
+    .pipe(dest('.'));
 });
 
-gulp.task('bundle', function () {
-  return gulp.src(bundle)
+task('bundle', function () {
+  return src(bundle)
     .pipe(concat(builds.bundle))
-    .pipe(gulp.dest('.'));
+    .pipe(dest('.'));
 });
 
-gulp.task('uglify', function () {
-  return gulp.src(products)
+task('uglify', function () {
+  return src(products)
     .pipe(uglify())
     .pipe(rename({
       extname: ".min.js"
     }))
-    .pipe(gulp.dest('build'));
+    .pipe(dest('build'));
 });
 
-gulp.task('karma', function (done) {
-  new KarmaServer({
+task('karma', function (done) {
+  new karma.Server({
     configFile: __dirname + '/karma.conf.js',
     files: test,
     singleRun: true,
   }, function(err) {
-      if(err === 0){
-        done();
+      if (err > 0) {
+        return done(new Error(`Karma exited with status code ${err}`));
       }
+      done();
   }).start();
 });
 
-gulp.task('watch-karma', function() {
-  new KarmaServer({
+task('watch-karma', function(done) {
+  new karma.Server({
     configFile: __dirname + '/karma.conf.js',
     files: test,
+    singleRun: false,
   }, function(err) {
-      if(err === 0){
-        done();
+      if (err > 0) {
+          return done(new Error(`Karma (watch) exited with status code ${err}`));
       }
   }).start();
+  done();
 });
 
-gulp.task('watch-build-watch', function () {
-  watch(coffees.concat(css), function () {
-    return gulp.start('build');
-  });
+// NEW: Add karma runner, triggered after every build
+task('run-karma', function (done) {
+    new karma.runner.run({
+    configFile: __dirname + '/karma.conf.js',
+    files: test,
+    singleRun: true
+  }, function(err) {
+      if (err > 0) {
+          return done(new Error(`Karma runner exited with status code ${err}`));
+      }
+      done();
+    });
 });
 
 // Main tasks
 
-gulp.task('build',
-  gulp.series('coffee2js', gulp.parallel('css', 'core', 'bundle'), function(done) {
+task('build',
+  series('coffee2js', parallel('css', 'core', 'bundle'), function(done) {
   done();
 }));
 
-gulp.task('default',
-  gulp.series('build', 'uglify', function(done) {
+task('default',
+  series('build', 'uglify', function(done) {
   done();
 }));
 
-gulp.task('test',
-  gulp.series('build', 'karma', function(done) {
+task('test',
+  series('build', 'karma', function(done) {
   done();
 }));
 
-gulp.task('watch-build',
-  gulp.series('build', 'watch-build-watch', function(done) {
+task('watch-build', function(done) {
+  watch(coffees.concat(css), series('build', 'run-karma'));
   done();
-}));
+});
 
-gulp.task('watch',
-  gulp.series('watch-build', 'watch-karma', function(done) {
+task('watch',
+  series('watch-karma', 'watch-build', function(done) {
   done();
 }));

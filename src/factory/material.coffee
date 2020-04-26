@@ -25,7 +25,7 @@ class Material
       (uniforms[key]   = value) for key, value of shader.uniforms
       (varyings[key]   = value) for key, value of shader.varyings
       (attributes[key] = value) for key, value of shader.attributes
-
+    # TODO Move attributes to Geometry
     options.vertexShader   = vertex  .code
     options.vertexGraph    = vertex  .graph
     options.fragmentShader = fragment.code
