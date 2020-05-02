@@ -777,7 +777,7 @@ describe "layout", () ->
 
     expect(code).toBe(result)
 
-  xit 'de-dupes attributes/uniforms on a material', () ->
+  it 'de-dupes attributes/uniforms on a material', () ->
 
     vertex1 = """
     uniform vec4 rgba;
