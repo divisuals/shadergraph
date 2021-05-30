@@ -1,3 +1,7 @@
+_2.0.8-dev_
+ * Upgrade to THREE.js r127
+ * Update build (gulp) tooling
+
 _2.0.7_
  * Clean state NPM dependencies / karma
  * CoffeeScript 1.10 compatibility
@@ -12,7 +16,7 @@ _2.0.6_
 
 _2.0.5_
  * Fix graph not being returned with material in case of automatic tail block.
- 
+
 _2.0.4_
  * Ensure correct ordering of snippet callbacks in all cases
  * Refactor outlet creation / handling
