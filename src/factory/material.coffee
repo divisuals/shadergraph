@@ -17,6 +17,7 @@ class Material
     uniforms   = {}
     varyings   = {}
     attributes = {}
+    options.userData = {}
 
     vertex   = @vertex  .link 'main'
     fragment = @fragment.link 'main'
@@ -25,15 +26,15 @@ class Material
       (uniforms[key]   = value) for key, value of shader.uniforms
       (varyings[key]   = value) for key, value of shader.varyings
       (attributes[key] = value) for key, value of shader.attributes
-    # TODO Move attributes to Geometry
-    options.vertexShader   = vertex  .code
-    options.vertexGraph    = vertex  .graph
-    options.fragmentShader = fragment.code
-    options.fragmentGraph  = fragment.graph
-    options.attributes     = attributes
-    options.uniforms       = uniforms
-    options.varyings       = varyings
-    options.inspect        = () ->
+    # Move custom attributes to material's userData
+    options.vertexShader            = vertex  .code
+    options.userData.vertexGraph    = vertex  .graph
+    options.fragmentShader          = fragment.code
+    options.userData.fragmentGraph  = fragment.graph
+    options.userData.attributes     = attributes
+    options.uniforms                = uniforms
+    options.userData.varyings       = varyings
+    options.userData.inspect        = () ->
       Visualize.inspect 'Vertex Shader', vertex, 'Fragment Shader', fragment.graph
 
     @tock 'Material build' if debug
