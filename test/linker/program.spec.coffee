@@ -65,7 +65,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -117,7 +117,7 @@ describe "program", () ->
     void main() {
       vec3 _io_1_color;
       vec3 _io_2_color;
-    
+
       _sn_1_first(_io_1_color);
       _io_2_color = _io_1_color;
       _sn_2_second(_io_2_color);
@@ -125,7 +125,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -183,7 +183,7 @@ describe "program", () ->
       vec3 _io_2_color2;
       vec3 _io_3_color;
       vec3 _io_4_color;
-    
+
       _sn_1_split(_io_1_color1, _io_2_color2);
       _io_3_color = _io_1_color1;
       _sn_2_map(_io_3_color);
@@ -193,7 +193,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -266,7 +266,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -337,7 +337,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -398,7 +398,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -486,7 +486,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -530,4 +530,3 @@ describe "program", () ->
     expect(snippet.main.signature[0].inout).toBe 0
     expect(snippet.main.signature[1].type).toBe 'v4'
     expect(snippet.main.signature[1].inout).toBe 1
-

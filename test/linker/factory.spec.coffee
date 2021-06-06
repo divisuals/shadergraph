@@ -50,7 +50,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader = shadergraph.shader()
     shader.pipe('code1')
@@ -98,7 +98,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader = shadergraph.shader()
 
@@ -158,7 +158,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader = shadergraph.shader()
 
@@ -199,7 +199,7 @@ describe "program", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader = shadergraph.shader()
 

@@ -3,7 +3,7 @@ Priority   = require './priority'
 
 ###
  Callback linker
- 
+
  Imports given modules and generates linkages for registered callbacks.
 
  Builds composite program with single module as exported entry point
@@ -29,7 +29,7 @@ link = (language, links, modules, exported) ->
     header.push exports.defs   if exports.defs?
     header.push exports.bodies if exports.bodies?
 
-    include m.node, m.module, m.priority for m in modules
+    include m.node, m.module_, m.priority for m in modules
     sorted   = (lib for ns, lib of library).sort (a, b) -> Priority.compare a.priority, b.priority
     includes = sorted.map (x) -> x.code
 
@@ -59,22 +59,22 @@ link = (language, links, modules, exported) ->
       library[namespace] = {code, priority}
 
   # Include piece of code
-  include = (node, module, priority) ->
+  include = (node, module_, priority) ->
     priority = Priority.make priority
 
     # Adopt snippet's libraries
-    adopt ns, lib.code, Priority.nest priority, lib.priority for ns, lib of module.library
+    adopt ns, lib.code, Priority.nest priority, lib.priority for ns, lib of module_.library
 
     # Adopt snippet body as library
-    adopt module.namespace, module.body, priority
+    adopt module_.namespace, module_.body, priority
 
     # Adopt externals
-    (uniforms[key]   = def) for key, def of module.uniforms
-    (varyings[key]   = def) for key, def of module.varyings
-    (attributes[key] = def) for key, def of module.attributes
+    (uniforms[key]   = def) for key, def of module_.uniforms
+    (varyings[key]   = def) for key, def of module_.varyings
+    (attributes[key] = def) for key, def of module_.attributes
 
-    for key in module.symbols
-      ext = module.externals[key]
+    for key in module_.symbols
+      ext = module_.externals[key]
       if isDangling node, ext.name
         externals[key] = ext
         symbols.push key
@@ -84,8 +84,8 @@ link = (language, links, modules, exported) ->
     outlet = node.get name
 
     if !outlet
-      module = node.owner.snippet?._name ? node.owner.namespace
-      throw new Error "Unable to link program. Unlinked callback `#{name}` on `#{module}`"
+      module_ = node.owner.snippet?._name ? node.owner.namespace
+      throw new Error "Unable to link program. Unlinked callback `#{name}` on `#{module_}`"
 
     if outlet.inout == Graph.IN
       outlet.input == null

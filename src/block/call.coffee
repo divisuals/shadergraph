@@ -1,9 +1,11 @@
 Block   = require './block'
+Program = require('../linker').Program
 
 class Call extends Block
-  constructor: (@snippet) ->
-    @namespace = @snippet.namespace
-    super
+  constructor: (snippet) ->
+    super snippet.namespace
+    @snippet   = snippet
+    @node      = new Graph.Node @, @makeOutlets?() ? {}
 
   clone: () ->
     new Call @snippet

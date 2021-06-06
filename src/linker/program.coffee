@@ -19,26 +19,29 @@ class Program
   @entry: () -> "_pg_#{++Program.index}_"
 
   # Program starts out empty, ready to compile starting from a particular block
-  constructor: (@language, @namespace, @graph) ->
+  constructor: (language, namespace, graph) ->
+    @language   = language
+    @namespace  = namespace
+    @graph      = graph
     @calls      = {}
     @requires   = {}
 
   # Call a given module at certain priority
-  call: (node, module, priority) ->
-    ns = module.namespace
+  call: (node, module_, priority) ->
+    ns = module_.namespace
 
     # Merge all calls down into one with the right priority
     if exists = @calls[ns]
       exists.priority = Math.max exists.priority, priority
     else
-      @calls[ns] = {node, module, priority}
+      @calls[ns] = {node, module_, priority}
 
     @
 
   # Require a given (callback) module's externals
-  require: (node, module) ->
-    ns = module.namespace
-    @requires[ns] = {node, module}
+  require: (node, module_) ->
+    ns = module_.namespace
+    @requires[ns] = {node, module_}
 
   # Compile queued ops into result
   assemble: () ->

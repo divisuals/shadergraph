@@ -133,7 +133,7 @@ module.exports = _ =
     # and not building void main();
     if calls && calls.length == 1 && entry != 'main'
       a = body
-      b = calls[0].module
+      b = calls[0].module_
 
       if _.same body.signature, b.main.signature
         code = _.define entry, b.entry
@@ -184,9 +184,9 @@ module.exports = _ =
 
   # Link a module's entry point as a callback
   link: (link, out) =>
-    {module, name, external} = link
-    main  = module.main
-    entry = module.entry
+    {module_, name, external} = link
+    main  = module_.main
+    entry = module_.entry
 
     # If signatures match, #define alias for the symbol
     if _.same main.signature, external.signature
@@ -198,7 +198,7 @@ module.exports = _ =
     ins  = []
     outs = []
     map  = {}
-    returnVar = [module.namespace, $.RETURN_ARG].join ''
+    returnVar = [module_.namespace, $.RETURN_ARG].join ''
 
     for arg in external.signature
       list = if arg.inout == Graph.IN then ins else outs

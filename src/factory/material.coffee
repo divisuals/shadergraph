@@ -9,7 +9,9 @@ tick = () ->
     delta
 
 class Material
-  constructor: (@vertex, @fragment) ->
+  constructor: (vertex, fragment) ->
+    @vertex   = vertex
+    @fragment = fragment
     @tock = tick() if debug
 
   build: (options) -> @link options

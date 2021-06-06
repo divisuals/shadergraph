@@ -4,8 +4,10 @@ Block   = require './block'
   Join multiple disconnected nodes
 ###
 class Join extends Block
-  constructor: (@nodes) ->
-    super
+  constructor: (nodes) ->
+    super()
+    @nodes     = nodes
+    @node      = new Graph.Node @, @makeOutlets?() ? {}
 
   clone: () ->
     new Join @nodes

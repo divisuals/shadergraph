@@ -4,11 +4,14 @@ Visualize = require '../visualize'
 
 ###
   Chainable factory
-  
+
   Exposes methods to build a graph incrementally
 ###
 class Factory
-  constructor: (@language, @fetch, @config) ->
+  constructor: (language, fetch, config) ->
+    @language = language
+    @fetch    = fetch
+    @config   = config
     @graph()
 
   # Combined call/concat shortcut
@@ -318,6 +321,12 @@ class Factory
     @_state.tail .push node if !node.outputs.length
 
 class State
-  constructor: (@op = null, @multi = false, @start = [], @end = [], @nodes = [], @tail = []) ->
+  constructor: (op = null, multi = false, start = [], end = [], nodes = [], tail = []) ->
+    @op    = op
+    @multi = multi
+    @start = start
+    @end   = end
+    @nodes = nodes
+    @tail  = tail
 
 module.exports = Factory

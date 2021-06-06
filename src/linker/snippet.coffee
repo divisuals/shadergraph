@@ -7,7 +7,12 @@ class Snippet
     [sigs, compiler] = language.compile program
     new Snippet language, sigs, compiler, name, code
 
-  constructor: (@language, @_signatures, @_compiler, @_name, @_original) ->
+  constructor: (language, signatures, compiler, name, original) ->
+    @language    = language
+    @_signatures = signatures
+    @_compiler  = compiler
+    @_name      = name
+    @_original  = original
     @namespace  = null
     @code       = null
 

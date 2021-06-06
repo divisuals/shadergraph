@@ -1,7 +1,8 @@
 const { task, src, dest, series, parallel, pipe, watch } = require('gulp');
-var uglify = require('gulp-uglify');
+var coffee = require('gulp-coffee');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
+var uglify     = require('gulp-uglify-es').default;
 var browserify = require('browserify');
 var vsource    = require('vinyl-source-stream');
 var buffer     = require('vinyl-buffer');
@@ -41,6 +42,12 @@ var test = [
   'test/**/*.spec.coffee',
 ]);
 
+task('coffee', function() {
+  return src(coffees)
+    .pipe(coffee({bare: true}))
+    .pipe(dest('./cjs/'))
+});
+
 task('browserify', function () {
   return src('src/index.coffee', { read: false })
       .pipe(browserify({
@@ -70,7 +77,7 @@ task('coffee2js', function() {
   return b.bundle()
     .pipe(vsource('index.js'))
     .pipe(buffer())
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(dest('.tmp/'));
 });
 

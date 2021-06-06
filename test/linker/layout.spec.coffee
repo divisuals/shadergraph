@@ -50,7 +50,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -99,7 +99,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -158,7 +158,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -209,7 +209,7 @@ describe "layout", () ->
     void _pg_1_(vec3 color, out float _pg_2_return);
     float _sn_1_callback(vec3 color) {
       float _pg_2_return;
-    
+
       _pg_1_(color, _pg_2_return);
       return _pg_2_return;
     }
@@ -221,7 +221,7 @@ describe "layout", () ->
     }
     void _pg_1_(vec3 _io_1_color, out float _io_2_value) {
       float _io_3_return;
-    
+
       _io_3_return = _sn_2_foobar(_io_1_color);
       _sn_3_foobar(_io_2_value, _io_3_return);
     }
@@ -233,7 +233,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -277,13 +277,13 @@ describe "layout", () ->
     }
     void main(vec3 _io_1_color) {
       float _io_2_return;
-    
+
       _io_2_return = _pg_1_(_io_1_color);
       _sn_2_main(_io_2_return);
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -351,7 +351,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -419,7 +419,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -489,7 +489,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -572,7 +572,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     # Prepare pipeline of two snippets
     pipeline = shadergraph.shader()
@@ -634,7 +634,7 @@ describe "layout", () ->
     vec3 _pg_5_(vec3 _io_1_rgb) {
       vec3 _io_2_return;
       vec3 _io_3_return;
-    
+
       _io_2_return = _pg_3_(_io_1_rgb);
       _io_3_return = _pg_4_(_io_2_return);
       return _io_3_return;
@@ -649,13 +649,13 @@ describe "layout", () ->
     }
     void main() {
       vec3 _io_4_return;
-    
+
       _io_4_return = _sn_4_getColor();
       _sn_5_setColor(_io_4_return);
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     # Prepare instanced snippet
     instance = shadergraph.shader()
@@ -735,7 +735,7 @@ describe "layout", () ->
     vec3 _pg_3_() {
       vec3 _io_1_return;
       vec3 _io_2_return;
-    
+
       _io_1_return = _sn_5_getColor();
       _io_2_return = _sn_6_squareColor(_io_1_return);
       return _io_2_return;
@@ -754,7 +754,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     # Prepare pipeline of two snippets
     pipeline = shadergraph.shader()
@@ -796,7 +796,8 @@ describe "layout", () ->
 
     void main() {
       vColor2 = color2 * color2 * rgba;
-    }    """
+    }
+    """
 
     getColor = """
     uniform vec4 rgba;
@@ -820,15 +821,15 @@ describe "layout", () ->
     uniform vec4 rgba;
     attribute vec3 color;
     varying vec3 vColor1;
-    
+
     void _sn_1_main() {
       vColor1 = color * rgba;
     }
     varying vec3 vColor2;
-    
+
     void _sn_2_main() {
       vColor2 = color2 * color2 * rgba;
-    }    
+    }
     void main() {
       _sn_1_main();
       _sn_2_main();
@@ -847,13 +848,13 @@ describe "layout", () ->
     }
     void main() {
       vec3 _io_1_return;
-    
+
       _io_1_return = _sn_1_getColor();
       _sn_2_setColor(_io_1_return);
     }
     """
 
-    shadergraph = ShaderGraph snippets, { globalUniforms: true }
+    shadergraph = new ShaderGraph snippets, { globalUniforms: true }
 
     # Prepare new material
     material = shadergraph.material()
@@ -919,7 +920,7 @@ describe "layout", () ->
     vec3 _pg_2_(out vec3 _io_1_return) {
       vec3 _io_2_return;
       vec3 _io_1_return;
-    
+
       _io_2_return = _sn_4_getColor1();
       _io_1_return = _sn_5_getColor2();
       return _io_2_return;
@@ -937,7 +938,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph()
+    shadergraph = new ShaderGraph()
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -1000,7 +1001,7 @@ describe "layout", () ->
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -1052,7 +1053,7 @@ describe "layout", () ->
     void _pg_1_(in vec3 _io_1_color, out vec3 _io_2_color) {
       vec3 _io_3_color;
       vec3 _io_2_color;
-    
+
       _io_3_color = _io_1_color;
       _sn_2_squareColor(_io_3_color);
       _io_2_color = _io_3_color;
@@ -1064,14 +1065,14 @@ describe "layout", () ->
     void main() {
       vec3 _io_4_return;
       vec3 _io_5_color;
-    
+
       _io_4_return = _sn_1_getColor();
       _pg_1_(_io_4_return, _io_5_color);
       _sn_4_setColor(_io_5_color);
     }
     """
 
-    shadergraph = ShaderGraph snippets
+    shadergraph = new ShaderGraph snippets
 
     shader  = shadergraph.shader()
     graph   = shader
@@ -1087,4 +1088,3 @@ describe "layout", () ->
     code = normalize(snippet.code)
 
     expect(code).toBe(result)
-

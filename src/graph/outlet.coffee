@@ -22,7 +22,13 @@ class Outlet
     name = name.replace /_i_o$/, ''
     name = name.replace /(In|Out|Inout|InOut)$/, ''
 
-  constructor: (@inout, @name, @hint, @type, @meta = {}, @id) ->
+  constructor: (inout, name, hint, type, meta = {}, id) ->
+    @inout  = inout
+    @name   = name
+    @hint   = hint
+    @type   = type
+    @meta   = meta
+    @id     = id
     @hint  ?= Outlet.hint @name
 
     @node   = null

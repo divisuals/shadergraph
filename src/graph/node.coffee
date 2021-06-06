@@ -8,7 +8,8 @@ class Node
   @index: 0
   @id: (name) -> ++Node.index
 
-  constructor: (@owner, outlets) ->
+  constructor: (owner, outlets) ->
+    @owner   = owner
     @graph   = null
     @inputs  = []
     @outputs = []

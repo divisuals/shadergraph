@@ -5,11 +5,13 @@ Block   = require './block'
   Re-use a subgraph as a callback
 ###
 class Callback extends Block
-  constructor: (@graph) ->
-    super
+  constructor: (graph) ->
+    super()
+    @graph     = graph
+    @node      = new Graph.Node @, @makeOutlets?() ? {}
 
   refresh: () ->
-    super
+    super()
     delete @subroutine
 
   clone: () ->

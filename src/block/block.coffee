@@ -7,9 +7,10 @@ debug = false
 class Block
   @previous = (outlet) -> outlet.input?.node.owner
 
-  constructor: () ->
+  constructor: (namespace = null) ->
+    @namespace = namespace
     @namespace ?= Program.entry()
-    @node       = new Graph.Node @, @makeOutlets?() ? {}
+    # defer creating Node & makeOutlets in subclasses
 
   refresh: () ->
     @node.setOutlets @makeOutlets?() ? {}
@@ -25,12 +26,12 @@ class Block
 
   # Link up programs into a layout, starting from this block
   link: (language, namespace) ->
-    module = @compile language, namespace
+    module_ = @compile language, namespace
 
     layout = new Layout language, @node.graph
-    @_include module, layout, 0
+    @_include module_, layout, 0
     @export   layout, 0
-    layout.link module
+    layout.link module_
 
   # Subclassed methods
   call:     (program, depth) ->
@@ -49,32 +50,32 @@ class Block
     outlet
 
   # Make a call to this module in the given program
-  _call: (module, program, depth) ->
-    program.call @node, module, depth
+  _call: (module_, program, depth) ->
+    program.call @node, module_, depth
 
   # Require this module's dependencies in the given program
-  _require: (module, program) ->
-    program.require @node, module
+  _require: (module_, program) ->
+    program.require @node, module_
 
   # Make a call to all connected inputs
-  _inputs: (module, program, depth) ->
-    for arg in module.main.signature
+  _inputs: (module_, program, depth) ->
+    for arg in module_.main.signature
       outlet = @node.get arg.name
       Block.previous(outlet)?.call program, depth + 1
 
   # Insert callback to this module in the given layout
-  _callback: (module, layout, depth, name, external, outlet) ->
-    layout.callback @node, module, depth, name, external, outlet
+  _callback: (module_, layout, depth, name, external, outlet) ->
+    layout.callback @node, module_, depth, name, external, outlet
 
   # Include this module in the given layout
-  _include: (module, layout, depth) ->
-    layout.include @node, module, depth
+  _include: (module_, layout, depth) ->
+    layout.include @node, module_, depth
 
-  # Link this module's connected callbacks 
-  _link: (module, layout, depth) ->
-    debug && console.log 'block::_link', @.toString(), module.namespace
-    for key in module.symbols
-      ext = module.externals[key]
+  # Link this module's connected callbacks
+  _link: (module_, layout, depth) ->
+    debug && console.log 'block::_link', @.toString(), module_.namespace
+    for key in module_.symbols
+      ext = module_.externals[key]
       outlet = @node.get ext.name
       throw new OutletError("External not found on #{@_info ext.name}") if !outlet
 
@@ -92,9 +93,9 @@ class Block
       block?.export layout, depth + 1
 
   # Trace backwards to discover callbacks further up
-  _trace: (module, layout, depth) ->
-    debug && console.log 'block::_trace', @.toString(), module.namespace
-    for arg in module.main.signature
+  _trace: (module_, layout, depth) ->
+    debug && console.log 'block::_trace', @.toString(), module_.namespace
+    for arg in module_.main.signature
       outlet = @node.get arg.name
       Block.previous(outlet)?.export layout, depth + 1
 

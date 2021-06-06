@@ -158,7 +158,14 @@ decl.type = (name, spec, quant, count, dir, storage) ->
   new Definition name, type, spec, param, value, inout
 
 class Definition
-  constructor: (@name, @type, @spec, @param, @value, @inout, @meta) ->
+  constructor: (name, type, spec, param, value, inout, meta) ->
+    @name  = name
+    @type  = type
+    @spec  = spec
+    @param = param
+    @value = value
+    @inout = inout
+    @meta  = meta
 
   split: () ->
     # Split inouts
@@ -170,4 +177,3 @@ class Definition
 
   copy: (name, meta) ->
     def = new Definition name ? @name, @type, @spec, @param, @value, @inout, meta
-

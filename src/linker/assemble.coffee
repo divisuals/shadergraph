@@ -21,7 +21,7 @@ assemble = (language, namespace, calls, requires) ->
 
   process = () ->
 
-    required r.node, r.module for ns, r of requires
+    required r.node, r.module_ for ns, r of requires
 
     [body, calls] = handle calls
     body.entry    = namespace if namespace?
@@ -52,17 +52,17 @@ assemble = (language, namespace, calls, requires) ->
     calls.sort (a, b) -> b.priority - a.priority
 
     # Call module in DAG chain
-    call = (node, module, priority) =>
-      include     node, module, priority
-      main      = module.main
-      entry     = module.entry
+    call = (node, module_, priority) =>
+      include     node, module_, priority
+      main      = module_.main
+      entry     = module_.entry
 
       _lookup   = (name) -> lookup     node, name
       _dangling = (name) -> isDangling node, name
       generate.call _lookup, _dangling, entry, main.signature, body
 
     body = generate.body()
-    call c.node, c.module, c.priority for c in calls
+    call c.node, c.module_, c.priority for c in calls
 
     [body, calls]
 
@@ -75,26 +75,26 @@ assemble = (language, namespace, calls, requires) ->
       library[namespace] = {code, priority}
 
   # Include snippet for a call
-  include = (node, module, priority) ->
+  include = (node, module_, priority) ->
     priority = Priority.make priority
 
     # Adopt snippet's libraries
-    adopt ns, lib.code, Priority.nest priority, lib.priority for ns, lib of module.library
+    adopt ns, lib.code, Priority.nest priority, lib.priority for ns, lib of module_.library
 
     # Adopt snippet body as library
-    adopt module.namespace, module.body, priority
+    adopt module_.namespace, module_.body, priority
 
     # Adopt GL vars
-    (uniforms[key]   = def) for key, def of module.uniforms
-    (varyings[key]   = def) for key, def of module.varyings
-    (attributes[key] = def) for key, def of module.attributes
+    (uniforms[key]   = def) for key, def of module_.uniforms
+    (varyings[key]   = def) for key, def of module_.varyings
+    (attributes[key] = def) for key, def of module_.attributes
 
-    required node, module
+    required node, module_
 
-  required = (node, module) ->
+  required = (node, module_) ->
     # Adopt external symbols
-    for key in module.symbols
-      ext = module.externals[key]
+    for key in module_.symbols
+      ext = module_.externals[key]
       if isDangling node, ext.name
         copy = {}
         copy[k] = v for k, v of ext
@@ -127,4 +127,3 @@ assemble = (language, namespace, calls, requires) ->
   return process()
 
 module.exports = assemble
-
