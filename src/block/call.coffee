@@ -1,5 +1,5 @@
+Graph   = require '../graph'
 Block   = require './block'
-Program = require('../linker').Program
 
 class Call extends Block
   constructor: (snippet) ->

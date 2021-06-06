@@ -1,3 +1,4 @@
+Graph   = require '../graph'
 Block   = require './block'
 
 ###
