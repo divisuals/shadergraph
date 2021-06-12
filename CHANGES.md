@@ -1,6 +1,7 @@
 _2.0.8-dev_
  * Upgrade to THREE.js r127
  * Update build (gulp) tooling
+ * CoffeeScript 2.5.1 compatibility
 
 _2.0.7_
  * Clean state NPM dependencies / karma
