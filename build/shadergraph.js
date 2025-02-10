@@ -7,14 +7,14 @@
 		exports["ShaderGraph"] = factory();
 	else
 		root["ShaderGraph"] = factory();
-})(self, function() {
+})(self, () => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 960:
+/***/ 106:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var parse = __webpack_require__(565);
+var parse = __webpack_require__(915);
 
 module.exports = parseArray;
 
@@ -31,7 +31,7 @@ function parseArray(tokens) {
 
 /***/ }),
 
-/***/ 559:
+/***/ 852:
 /***/ ((module) => {
 
 let state, token, tokens, idx;
@@ -312,13 +312,13 @@ function fail(message) {
 
 /***/ }),
 
-/***/ 565:
+/***/ 915:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = parser;
 
-const full_parse_expr = __webpack_require__(559),
-  Scope = __webpack_require__(669);
+const full_parse_expr = __webpack_require__(852),
+  Scope = __webpack_require__(843);
 
 // singleton!
 const Advance = new Object();
@@ -1431,7 +1431,7 @@ function is_precision(token) {
 
 /***/ }),
 
-/***/ 669:
+/***/ 843:
 /***/ ((module) => {
 
 module.exports = scope;
@@ -1473,16 +1473,16 @@ proto.find = function (name, fail) {
 
 /***/ }),
 
-/***/ 460:
+/***/ 873:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = tokenize
 
-var literals100 = __webpack_require__(529)
-  , operators = __webpack_require__(679)
-  , builtins100 = __webpack_require__(222)
-  , literals300es = __webpack_require__(914)
-  , builtins300es = __webpack_require__(537)
+var literals100 = __webpack_require__(673)
+  , operators = __webpack_require__(984)
+  , builtins100 = __webpack_require__(5)
+  , literals300es = __webpack_require__(137)
+  , builtins300es = __webpack_require__(213)
 
 var NORMAL = 999          // <-- never emitted
   , TOKEN = 9999          // <-- never emitted
@@ -1855,11 +1855,11 @@ function tokenize(opt) {
 
 /***/ }),
 
-/***/ 537:
+/***/ 213:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // 300es builtins/reserved words that were previously valid in v100
-var v100 = __webpack_require__(222)
+var v100 = __webpack_require__(5)
 
 // The texture2D|Cube functions have been removed
 // And the gl_ features are updated
@@ -1931,7 +1931,7 @@ module.exports = v100.concat([
 
 /***/ }),
 
-/***/ 222:
+/***/ 5:
 /***/ ((module) => {
 
 module.exports = [
@@ -2088,10 +2088,10 @@ module.exports = [
 
 /***/ }),
 
-/***/ 914:
+/***/ 137:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var v100 = __webpack_require__(529)
+var v100 = __webpack_require__(673)
 
 module.exports = v100.slice().concat([
    'layout'
@@ -2182,7 +2182,7 @@ module.exports = v100.slice().concat([
 
 /***/ }),
 
-/***/ 529:
+/***/ 673:
 /***/ ((module) => {
 
 module.exports = [
@@ -2283,7 +2283,7 @@ module.exports = [
 
 /***/ }),
 
-/***/ 679:
+/***/ 984:
 /***/ ((module) => {
 
 module.exports = [
@@ -2337,10 +2337,10 @@ module.exports = [
 
 /***/ }),
 
-/***/ 932:
+/***/ 224:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var tokenize = __webpack_require__(460)
+var tokenize = __webpack_require__(873)
 
 module.exports = tokenizeString
 
@@ -2357,7 +2357,7 @@ function tokenizeString(str, opt) {
 
 /***/ }),
 
-/***/ 760:
+/***/ 48:
 /***/ ((__unused_webpack_module, exports) => {
 
 /*
@@ -2486,7 +2486,7 @@ exports.max = function (a, b) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 // ESM COMPAT FLAG
@@ -2494,98 +2494,98 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "ShaderGraph": () => (/* binding */ ShaderGraph),
-  "inspect": () => (/* binding */ src_inspect),
-  "load": () => (/* binding */ src_load),
-  "visualize": () => (/* binding */ src_visualize)
+  ShaderGraph: () => (/* binding */ ShaderGraph),
+  inspect: () => (/* binding */ src_inspect),
+  load: () => (/* binding */ src_load),
+  visualize: () => (/* binding */ src_visualize)
 });
 
 // NAMESPACE OBJECT: ./src/graph/index.js
 var src_graph_namespaceObject = {};
 __webpack_require__.r(src_graph_namespaceObject);
 __webpack_require__.d(src_graph_namespaceObject, {
-  "Graph": () => (Graph),
-  "IN": () => (IN),
-  "Node": () => (node_Node),
-  "OUT": () => (OUT),
-  "Outlet": () => (Outlet)
+  Graph: () => (Graph),
+  IN: () => (IN),
+  Node: () => (node_Node),
+  OUT: () => (OUT),
+  Outlet: () => (Outlet)
 });
 
 // NAMESPACE OBJECT: ./src/linker/index.js
 var linker_namespaceObject = {};
 __webpack_require__.r(linker_namespaceObject);
 __webpack_require__.d(linker_namespaceObject, {
-  "Layout": () => (Layout),
-  "Program": () => (Program),
-  "Snippet": () => (Snippet),
-  "assemble": () => (assemble),
-  "compare": () => (linker_priority.compare),
-  "link": () => (link_link),
-  "load": () => (load),
-  "make": () => (linker_priority.make),
-  "max": () => (linker_priority.max),
-  "nest": () => (linker_priority.nest)
+  Layout: () => (Layout),
+  Program: () => (Program),
+  Snippet: () => (Snippet),
+  assemble: () => (assemble),
+  compare: () => (linker_priority.compare),
+  link: () => (link_link),
+  load: () => (load),
+  make: () => (linker_priority.make),
+  max: () => (linker_priority.max),
+  nest: () => (linker_priority.nest)
 });
 
 // NAMESPACE OBJECT: ./src/visualize/markup.js
 var markup_namespaceObject = {};
 __webpack_require__.r(markup_namespaceObject);
 __webpack_require__.d(markup_namespaceObject, {
-  "merge": () => (merge),
-  "overlay": () => (overlay),
-  "process": () => (process)
+  merge: () => (merge),
+  overlay: () => (overlay),
+  process: () => (process)
 });
 
 // NAMESPACE OBJECT: ./src/visualize/index.js
 var visualize_namespaceObject = {};
 __webpack_require__.r(visualize_namespaceObject);
 __webpack_require__.d(visualize_namespaceObject, {
-  "inspect": () => (inspect),
-  "markup": () => (markup),
-  "serialize": () => (visualize_serialize),
-  "visualize": () => (visualize)
+  inspect: () => (inspect),
+  markup: () => (markup),
+  serialize: () => (visualize_serialize),
+  visualize: () => (visualize)
 });
 
 // NAMESPACE OBJECT: ./src/factory/index.js
 var src_factory_namespaceObject = {};
 __webpack_require__.r(src_factory_namespaceObject);
 __webpack_require__.d(src_factory_namespaceObject, {
-  "Factory": () => (Factory),
-  "Material": () => (Material),
-  "cache": () => (cache),
-  "hash": () => (hash),
-  "library": () => (library),
-  "queue": () => (queue)
+  Factory: () => (Factory),
+  Material: () => (Material),
+  cache: () => (cache),
+  hash: () => (hash),
+  library: () => (library),
+  queue: () => (queue)
 });
 
 // NAMESPACE OBJECT: ./src/glsl/index.js
 var glsl_namespaceObject = {};
 __webpack_require__.r(glsl_namespaceObject);
 __webpack_require__.d(glsl_namespaceObject, {
-  "RETURN_ARG": () => (RETURN_ARG),
-  "SHADOW_ARG": () => (SHADOW_ARG),
-  "body": () => (body),
-  "build": () => (build),
-  "call": () => (call),
-  "compile": () => (compile),
-  "dedupe": () => (dedupe),
-  "define": () => (generate_define),
-  "defuse": () => (defuse),
-  "fn": () => (fn),
-  "hoist": () => (hoist),
-  "invoke": () => (invoke),
-  "lines": () => (lines),
-  "link": () => (generate_link),
-  "links": () => (links),
-  "list": () => (list),
-  "parse": () => (parse),
-  "same": () => (same),
-  "statements": () => (statements),
-  "unshadow": () => (unshadow),
-  "walk": () => (walk)
+  RETURN_ARG: () => (RETURN_ARG),
+  SHADOW_ARG: () => (SHADOW_ARG),
+  body: () => (body),
+  build: () => (build),
+  call: () => (call),
+  compile: () => (compile),
+  dedupe: () => (dedupe),
+  define: () => (generate_define),
+  defuse: () => (defuse),
+  fn: () => (fn),
+  hoist: () => (hoist),
+  invoke: () => (invoke),
+  lines: () => (lines),
+  link: () => (generate_link),
+  links: () => (links),
+  list: () => (list),
+  parse: () => (parse),
+  same: () => (same),
+  statements: () => (statements),
+  unshadow: () => (unshadow),
+  walk: () => (walk)
 });
 
-;// CONCATENATED MODULE: ./src/graph/graph.js
+;// ./src/graph/graph.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -2698,7 +2698,7 @@ class Graph {
 }
 Graph.initClass();
 
-;// CONCATENATED MODULE: ./src/graph/outlet.js
+;// ./src/graph/outlet.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -2838,7 +2838,7 @@ class Outlet {
 }
 Outlet.initClass();
 
-;// CONCATENATED MODULE: ./src/graph/node.js
+;// ./src/graph/node.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -3100,7 +3100,7 @@ class node_Node {
 }
 node_Node.initClass();
 
-;// CONCATENATED MODULE: ./src/graph/index.js
+;// ./src/graph/index.js
 
 const { IN, OUT } = Graph;
 
@@ -3108,7 +3108,7 @@ const { IN, OUT } = Graph;
 
 
 
-;// CONCATENATED MODULE: ./src/linker/snippet.js
+;// ./src/linker/snippet.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -3310,8 +3310,8 @@ class Snippet {
 Snippet.initClass();
 
 // EXTERNAL MODULE: ./src/linker/priority.js
-var linker_priority = __webpack_require__(760);
-;// CONCATENATED MODULE: ./src/linker/assemble.js
+var linker_priority = __webpack_require__(48);
+;// ./src/linker/assemble.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -3509,7 +3509,7 @@ const assemble = function (language, namespace, calls, requires) {
   return process();
 };
 
-;// CONCATENATED MODULE: ./src/linker/program.js
+;// ./src/linker/program.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -3589,7 +3589,7 @@ class Program {
 }
 Program.initClass();
 
-;// CONCATENATED MODULE: ./src/linker/link.js
+;// ./src/linker/link.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -3746,7 +3746,7 @@ const link_link = function (language, links, modules, exported) {
   return process();
 };
 
-;// CONCATENATED MODULE: ./src/linker/layout.js
+;// ./src/linker/layout.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -3812,7 +3812,7 @@ class Layout {
   }
 }
 
-;// CONCATENATED MODULE: ./src/linker/index.js
+;// ./src/linker/index.js
 
 
 const { load } = Snippet;
@@ -3824,7 +3824,7 @@ const { load } = Snippet;
 
 
 
-;// CONCATENATED MODULE: ./src/block/block.js
+;// ./src/block/block.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -4044,7 +4044,7 @@ function __guard__(value, transform) {
     : undefined;
 }
 
-;// CONCATENATED MODULE: ./src/block/call.js
+;// ./src/block/call.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -4096,7 +4096,7 @@ class Call extends Block {
   }
 }
 
-;// CONCATENATED MODULE: ./src/block/callback.js
+;// ./src/block/callback.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -4208,7 +4208,7 @@ class Callback extends Block {
   }
 }
 
-;// CONCATENATED MODULE: ./src/block/isolate.js
+;// ./src/block/isolate.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -4307,7 +4307,7 @@ class Isolate extends Block {
   }
 }
 
-;// CONCATENATED MODULE: ./src/block/join.js
+;// ./src/block/join.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -4358,14 +4358,14 @@ class Join extends Block {
   }
 }
 
-;// CONCATENATED MODULE: ./src/block/index.js
+;// ./src/block/index.js
 
 
 
 
 
 
-;// CONCATENATED MODULE: ./src/visualize/serialize.js
+;// ./src/visualize/serialize.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -4467,7 +4467,7 @@ const serialize = function (graph) {
   return { nodes, links };
 };
 
-;// CONCATENATED MODULE: ./src/factory/hash.js
+;// ./src/factory/hash.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -4535,7 +4535,7 @@ const hash = function (string) {
   return (h ^= h >>> 16);
 };
 
-;// CONCATENATED MODULE: ./src/visualize/markup.js
+;// ./src/visualize/markup.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -4889,7 +4889,7 @@ const merge = function (markup) {
   }
 };
 
-;// CONCATENATED MODULE: ./src/visualize/index.js
+;// ./src/visualize/index.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -4971,7 +4971,7 @@ const inspect = function () {
   return element;
 };
 
-;// CONCATENATED MODULE: ./src/factory/factory.js
+;// ./src/factory/factory.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -5438,7 +5438,7 @@ class State {
   }
 }
 
-;// CONCATENATED MODULE: ./src/factory/material.js
+;// ./src/factory/material.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -5530,7 +5530,7 @@ class Material {
   }
 }
 
-;// CONCATENATED MODULE: ./src/factory/library.js
+;// ./src/factory/library.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -5588,7 +5588,7 @@ const library = function (language, snippets, load) {
   return fetch;
 };
 
-;// CONCATENATED MODULE: ./src/factory/queue.js
+;// ./src/factory/queue.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -5674,7 +5674,7 @@ const queue = function (limit) {
   };
 };
 
-;// CONCATENATED MODULE: ./src/factory/cache.js
+;// ./src/factory/cache.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -5711,7 +5711,7 @@ const cache = function (fetch) {
   };
 };
 
-;// CONCATENATED MODULE: ./src/factory/index.js
+;// ./src/factory/index.js
 
 
 
@@ -5720,7 +5720,7 @@ const cache = function (fetch) {
 
 
 
-;// CONCATENATED MODULE: ./src/glsl/compile.js
+;// ./src/glsl/compile.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -5829,15 +5829,358 @@ const string_compiler = function (code, placeholders) {
 };
 
 // EXTERNAL MODULE: ./node_modules/glsl-tokenizer/string.js
-var string = __webpack_require__(932);
+var string = __webpack_require__(224);
 var string_default = /*#__PURE__*/__webpack_require__.n(string);
-// EXTERNAL MODULE: ../glsl-parser/direct.js
-var direct = __webpack_require__(960);
+// EXTERNAL MODULE: ./node_modules/@sicmutils/glsl-parser/direct.js
+var direct = __webpack_require__(106);
 var direct_default = /*#__PURE__*/__webpack_require__.n(direct);
-;// CONCATENATED MODULE: ./node_modules/three/src/math/Vector2.js
+;// ./node_modules/three/src/math/MathUtils.js
+const _lut = [ '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '0a', '0b', '0c', '0d', '0e', '0f', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4e', '4f', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f', 'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af', 'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf', 'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf', 'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df', 'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef', 'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff' ];
+
+let _seed = 1234567;
+
+
+const DEG2RAD = Math.PI / 180;
+const RAD2DEG = 180 / Math.PI;
+
+// http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/21963136#21963136
+function generateUUID() {
+
+	const d0 = Math.random() * 0xffffffff | 0;
+	const d1 = Math.random() * 0xffffffff | 0;
+	const d2 = Math.random() * 0xffffffff | 0;
+	const d3 = Math.random() * 0xffffffff | 0;
+	const uuid = _lut[ d0 & 0xff ] + _lut[ d0 >> 8 & 0xff ] + _lut[ d0 >> 16 & 0xff ] + _lut[ d0 >> 24 & 0xff ] + '-' +
+			_lut[ d1 & 0xff ] + _lut[ d1 >> 8 & 0xff ] + '-' + _lut[ d1 >> 16 & 0x0f | 0x40 ] + _lut[ d1 >> 24 & 0xff ] + '-' +
+			_lut[ d2 & 0x3f | 0x80 ] + _lut[ d2 >> 8 & 0xff ] + '-' + _lut[ d2 >> 16 & 0xff ] + _lut[ d2 >> 24 & 0xff ] +
+			_lut[ d3 & 0xff ] + _lut[ d3 >> 8 & 0xff ] + _lut[ d3 >> 16 & 0xff ] + _lut[ d3 >> 24 & 0xff ];
+
+	// .toLowerCase() here flattens concatenated strings to save heap memory space.
+	return uuid.toLowerCase();
+
+}
+
+function clamp( value, min, max ) {
+
+	return Math.max( min, Math.min( max, value ) );
+
+}
+
+// compute euclidean modulo of m % n
+// https://en.wikipedia.org/wiki/Modulo_operation
+function euclideanModulo( n, m ) {
+
+	return ( ( n % m ) + m ) % m;
+
+}
+
+// Linear mapping from range <a1, a2> to range <b1, b2>
+function mapLinear( x, a1, a2, b1, b2 ) {
+
+	return b1 + ( x - a1 ) * ( b2 - b1 ) / ( a2 - a1 );
+
+}
+
+// https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/inverse-lerp-a-super-useful-yet-often-overlooked-function-r5230/
+function inverseLerp( x, y, value ) {
+
+	if ( x !== y ) {
+
+		return ( value - x ) / ( y - x );
+
+	} else {
+
+		return 0;
+
+	}
+
+}
+
+// https://en.wikipedia.org/wiki/Linear_interpolation
+function lerp( x, y, t ) {
+
+	return ( 1 - t ) * x + t * y;
+
+}
+
+// http://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp/
+function damp( x, y, lambda, dt ) {
+
+	return lerp( x, y, 1 - Math.exp( - lambda * dt ) );
+
+}
+
+// https://www.desmos.com/calculator/vcsjnyz7x4
+function pingpong( x, length = 1 ) {
+
+	return length - Math.abs( euclideanModulo( x, length * 2 ) - length );
+
+}
+
+// http://en.wikipedia.org/wiki/Smoothstep
+function smoothstep( x, min, max ) {
+
+	if ( x <= min ) return 0;
+	if ( x >= max ) return 1;
+
+	x = ( x - min ) / ( max - min );
+
+	return x * x * ( 3 - 2 * x );
+
+}
+
+function smootherstep( x, min, max ) {
+
+	if ( x <= min ) return 0;
+	if ( x >= max ) return 1;
+
+	x = ( x - min ) / ( max - min );
+
+	return x * x * x * ( x * ( x * 6 - 15 ) + 10 );
+
+}
+
+// Random integer from <low, high> interval
+function randInt( low, high ) {
+
+	return low + Math.floor( Math.random() * ( high - low + 1 ) );
+
+}
+
+// Random float from <low, high> interval
+function randFloat( low, high ) {
+
+	return low + Math.random() * ( high - low );
+
+}
+
+// Random float from <-range/2, range/2> interval
+function randFloatSpread( range ) {
+
+	return range * ( 0.5 - Math.random() );
+
+}
+
+// Deterministic pseudo-random float in the interval [ 0, 1 ]
+function seededRandom( s ) {
+
+	if ( s !== undefined ) _seed = s;
+
+	// Mulberry32 generator
+
+	let t = _seed += 0x6D2B79F5;
+
+	t = Math.imul( t ^ t >>> 15, t | 1 );
+
+	t ^= t + Math.imul( t ^ t >>> 7, t | 61 );
+
+	return ( ( t ^ t >>> 14 ) >>> 0 ) / 4294967296;
+
+}
+
+function degToRad( degrees ) {
+
+	return degrees * DEG2RAD;
+
+}
+
+function radToDeg( radians ) {
+
+	return radians * RAD2DEG;
+
+}
+
+function isPowerOfTwo( value ) {
+
+	return ( value & ( value - 1 ) ) === 0 && value !== 0;
+
+}
+
+function ceilPowerOfTwo( value ) {
+
+	return Math.pow( 2, Math.ceil( Math.log( value ) / Math.LN2 ) );
+
+}
+
+function floorPowerOfTwo( value ) {
+
+	return Math.pow( 2, Math.floor( Math.log( value ) / Math.LN2 ) );
+
+}
+
+function setQuaternionFromProperEuler( q, a, b, c, order ) {
+
+	// Intrinsic Proper Euler Angles - see https://en.wikipedia.org/wiki/Euler_angles
+
+	// rotations are applied to the axes in the order specified by 'order'
+	// rotation by angle 'a' is applied first, then by angle 'b', then by angle 'c'
+	// angles are in radians
+
+	const cos = Math.cos;
+	const sin = Math.sin;
+
+	const c2 = cos( b / 2 );
+	const s2 = sin( b / 2 );
+
+	const c13 = cos( ( a + c ) / 2 );
+	const s13 = sin( ( a + c ) / 2 );
+
+	const c1_3 = cos( ( a - c ) / 2 );
+	const s1_3 = sin( ( a - c ) / 2 );
+
+	const c3_1 = cos( ( c - a ) / 2 );
+	const s3_1 = sin( ( c - a ) / 2 );
+
+	switch ( order ) {
+
+		case 'XYX':
+			q.set( c2 * s13, s2 * c1_3, s2 * s1_3, c2 * c13 );
+			break;
+
+		case 'YZY':
+			q.set( s2 * s1_3, c2 * s13, s2 * c1_3, c2 * c13 );
+			break;
+
+		case 'ZXZ':
+			q.set( s2 * c1_3, s2 * s1_3, c2 * s13, c2 * c13 );
+			break;
+
+		case 'XZX':
+			q.set( c2 * s13, s2 * s3_1, s2 * c3_1, c2 * c13 );
+			break;
+
+		case 'YXY':
+			q.set( s2 * c3_1, c2 * s13, s2 * s3_1, c2 * c13 );
+			break;
+
+		case 'ZYZ':
+			q.set( s2 * s3_1, s2 * c3_1, c2 * s13, c2 * c13 );
+			break;
+
+		default:
+			console.warn( 'THREE.MathUtils: .setQuaternionFromProperEuler() encountered an unknown order: ' + order );
+
+	}
+
+}
+
+function denormalize( value, array ) {
+
+	switch ( array.constructor ) {
+
+		case Float32Array:
+
+			return value;
+
+		case Uint32Array:
+
+			return value / 4294967295.0;
+
+		case Uint16Array:
+
+			return value / 65535.0;
+
+		case Uint8Array:
+
+			return value / 255.0;
+
+		case Int32Array:
+
+			return Math.max( value / 2147483647.0, - 1.0 );
+
+		case Int16Array:
+
+			return Math.max( value / 32767.0, - 1.0 );
+
+		case Int8Array:
+
+			return Math.max( value / 127.0, - 1.0 );
+
+		default:
+
+			throw new Error( 'Invalid component type.' );
+
+	}
+
+}
+
+function normalize( value, array ) {
+
+	switch ( array.constructor ) {
+
+		case Float32Array:
+
+			return value;
+
+		case Uint32Array:
+
+			return Math.round( value * 4294967295.0 );
+
+		case Uint16Array:
+
+			return Math.round( value * 65535.0 );
+
+		case Uint8Array:
+
+			return Math.round( value * 255.0 );
+
+		case Int32Array:
+
+			return Math.round( value * 2147483647.0 );
+
+		case Int16Array:
+
+			return Math.round( value * 32767.0 );
+
+		case Int8Array:
+
+			return Math.round( value * 127.0 );
+
+		default:
+
+			throw new Error( 'Invalid component type.' );
+
+	}
+
+}
+
+const MathUtils = {
+	DEG2RAD: DEG2RAD,
+	RAD2DEG: RAD2DEG,
+	generateUUID: generateUUID,
+	clamp: clamp,
+	euclideanModulo: euclideanModulo,
+	mapLinear: mapLinear,
+	inverseLerp: inverseLerp,
+	lerp: lerp,
+	damp: damp,
+	pingpong: pingpong,
+	smoothstep: smoothstep,
+	smootherstep: smootherstep,
+	randInt: randInt,
+	randFloat: randFloat,
+	randFloatSpread: randFloatSpread,
+	seededRandom: seededRandom,
+	degToRad: degToRad,
+	radToDeg: radToDeg,
+	isPowerOfTwo: isPowerOfTwo,
+	ceilPowerOfTwo: ceilPowerOfTwo,
+	floorPowerOfTwo: floorPowerOfTwo,
+	setQuaternionFromProperEuler: setQuaternionFromProperEuler,
+	normalize: normalize,
+	denormalize: denormalize
+};
+
+
+
+;// ./node_modules/three/src/math/Vector2.js
+
+
 class Vector2 {
 
 	constructor( x = 0, y = 0 ) {
+
+		Vector2.prototype.isVector2 = true;
 
 		this.x = x;
 		this.y = y;
@@ -5943,14 +6286,7 @@ class Vector2 {
 
 	}
 
-	add( v, w ) {
-
-		if ( w !== undefined ) {
-
-			console.warn( 'THREE.Vector2: .add() now only accepts one argument. Use .addVectors( a, b ) instead.' );
-			return this.addVectors( v, w );
-
-		}
+	add( v ) {
 
 		this.x += v.x;
 		this.y += v.y;
@@ -5986,14 +6322,7 @@ class Vector2 {
 
 	}
 
-	sub( v, w ) {
-
-		if ( w !== undefined ) {
-
-			console.warn( 'THREE.Vector2: .sub() now only accepts one argument. Use .subVectors( a, b ) instead.' );
-			return this.subVectors( v, w );
-
-		}
+	sub( v ) {
 
 		this.x -= v.x;
 		this.y -= v.y;
@@ -6087,8 +6416,8 @@ class Vector2 {
 
 		// assumes min < max, componentwise
 
-		this.x = Math.max( min.x, Math.min( max.x, this.x ) );
-		this.y = Math.max( min.y, Math.min( max.y, this.y ) );
+		this.x = clamp( this.x, min.x, max.x );
+		this.y = clamp( this.y, min.y, max.y );
 
 		return this;
 
@@ -6096,8 +6425,8 @@ class Vector2 {
 
 	clampScalar( minVal, maxVal ) {
 
-		this.x = Math.max( minVal, Math.min( maxVal, this.x ) );
-		this.y = Math.max( minVal, Math.min( maxVal, this.y ) );
+		this.x = clamp( this.x, minVal, maxVal );
+		this.y = clamp( this.y, minVal, maxVal );
 
 		return this;
 
@@ -6107,7 +6436,7 @@ class Vector2 {
 
 		const length = this.length();
 
-		return this.divideScalar( length || 1 ).multiplyScalar( Math.max( min, Math.min( max, length ) ) );
+		return this.divideScalar( length || 1 ).multiplyScalar( clamp( length, min, max ) );
 
 	}
 
@@ -6140,8 +6469,8 @@ class Vector2 {
 
 	roundToZero() {
 
-		this.x = ( this.x < 0 ) ? Math.ceil( this.x ) : Math.floor( this.x );
-		this.y = ( this.y < 0 ) ? Math.ceil( this.y ) : Math.floor( this.y );
+		this.x = Math.trunc( this.x );
+		this.y = Math.trunc( this.y );
 
 		return this;
 
@@ -6199,6 +6528,20 @@ class Vector2 {
 		const angle = Math.atan2( - this.y, - this.x ) + Math.PI;
 
 		return angle;
+
+	}
+
+	angleTo( v ) {
+
+		const denominator = Math.sqrt( this.lengthSq() * v.lengthSq() );
+
+		if ( denominator === 0 ) return Math.PI / 2;
+
+		const theta = this.dot( v ) / denominator;
+
+		// clamp, to handle numerical problems
+
+		return Math.acos( clamp( theta, - 1, 1 ) );
 
 	}
 
@@ -6269,13 +6612,7 @@ class Vector2 {
 
 	}
 
-	fromBufferAttribute( attribute, index, offset ) {
-
-		if ( offset !== undefined ) {
-
-			console.warn( 'THREE.Vector2: offset has been removed from .fromBufferAttribute().' );
-
-		}
+	fromBufferAttribute( attribute, index ) {
 
 		this.x = attribute.getX( index );
 		this.y = attribute.getY( index );
@@ -6307,239 +6644,10 @@ class Vector2 {
 
 	}
 
-}
+	*[ Symbol.iterator ]() {
 
-Vector2.prototype.isVector2 = true;
-
-
-
-;// CONCATENATED MODULE: ./node_modules/three/src/math/MathUtils.js
-const _lut = [];
-
-for ( let i = 0; i < 256; i ++ ) {
-
-	_lut[ i ] = ( i < 16 ? '0' : '' ) + ( i ).toString( 16 );
-
-}
-
-let _seed = 1234567;
-
-
-const DEG2RAD = Math.PI / 180;
-const RAD2DEG = 180 / Math.PI;
-
-// http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/21963136#21963136
-function generateUUID() {
-
-	const d0 = Math.random() * 0xffffffff | 0;
-	const d1 = Math.random() * 0xffffffff | 0;
-	const d2 = Math.random() * 0xffffffff | 0;
-	const d3 = Math.random() * 0xffffffff | 0;
-	const uuid = _lut[ d0 & 0xff ] + _lut[ d0 >> 8 & 0xff ] + _lut[ d0 >> 16 & 0xff ] + _lut[ d0 >> 24 & 0xff ] + '-' +
-			_lut[ d1 & 0xff ] + _lut[ d1 >> 8 & 0xff ] + '-' + _lut[ d1 >> 16 & 0x0f | 0x40 ] + _lut[ d1 >> 24 & 0xff ] + '-' +
-			_lut[ d2 & 0x3f | 0x80 ] + _lut[ d2 >> 8 & 0xff ] + '-' + _lut[ d2 >> 16 & 0xff ] + _lut[ d2 >> 24 & 0xff ] +
-			_lut[ d3 & 0xff ] + _lut[ d3 >> 8 & 0xff ] + _lut[ d3 >> 16 & 0xff ] + _lut[ d3 >> 24 & 0xff ];
-
-	// .toUpperCase() here flattens concatenated strings to save heap memory space.
-	return uuid.toUpperCase();
-
-}
-
-function clamp( value, min, max ) {
-
-	return Math.max( min, Math.min( max, value ) );
-
-}
-
-// compute euclidian modulo of m % n
-// https://en.wikipedia.org/wiki/Modulo_operation
-function euclideanModulo( n, m ) {
-
-	return ( ( n % m ) + m ) % m;
-
-}
-
-// Linear mapping from range <a1, a2> to range <b1, b2>
-function mapLinear( x, a1, a2, b1, b2 ) {
-
-	return b1 + ( x - a1 ) * ( b2 - b1 ) / ( a2 - a1 );
-
-}
-
-// https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/inverse-lerp-a-super-useful-yet-often-overlooked-function-r5230/
-function inverseLerp( x, y, value ) {
-
-	if ( x !== y ) {
-
-		return ( value - x ) / ( y - x );
-
-		 } else {
-
-		return 0;
-
-		 }
-
-}
-
-// https://en.wikipedia.org/wiki/Linear_interpolation
-function lerp( x, y, t ) {
-
-	return ( 1 - t ) * x + t * y;
-
-}
-
-// http://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp/
-function damp( x, y, lambda, dt ) {
-
-	return lerp( x, y, 1 - Math.exp( - lambda * dt ) );
-
-}
-
-// https://www.desmos.com/calculator/vcsjnyz7x4
-function pingpong( x, length = 1 ) {
-
-	return length - Math.abs( euclideanModulo( x, length * 2 ) - length );
-
-}
-
-// http://en.wikipedia.org/wiki/Smoothstep
-function smoothstep( x, min, max ) {
-
-	if ( x <= min ) return 0;
-	if ( x >= max ) return 1;
-
-	x = ( x - min ) / ( max - min );
-
-	return x * x * ( 3 - 2 * x );
-
-}
-
-function smootherstep( x, min, max ) {
-
-	if ( x <= min ) return 0;
-	if ( x >= max ) return 1;
-
-	x = ( x - min ) / ( max - min );
-
-	return x * x * x * ( x * ( x * 6 - 15 ) + 10 );
-
-}
-
-// Random integer from <low, high> interval
-function randInt( low, high ) {
-
-	return low + Math.floor( Math.random() * ( high - low + 1 ) );
-
-}
-
-// Random float from <low, high> interval
-function randFloat( low, high ) {
-
-	return low + Math.random() * ( high - low );
-
-}
-
-// Random float from <-range/2, range/2> interval
-function randFloatSpread( range ) {
-
-	return range * ( 0.5 - Math.random() );
-
-}
-
-// Deterministic pseudo-random float in the interval [ 0, 1 ]
-function seededRandom( s ) {
-
-	if ( s !== undefined ) _seed = s % 2147483647;
-
-	// Park-Miller algorithm
-
-	_seed = _seed * 16807 % 2147483647;
-
-	return ( _seed - 1 ) / 2147483646;
-
-}
-
-function degToRad( degrees ) {
-
-	return degrees * DEG2RAD;
-
-}
-
-function radToDeg( radians ) {
-
-	return radians * RAD2DEG;
-
-}
-
-function isPowerOfTwo( value ) {
-
-	return ( value & ( value - 1 ) ) === 0 && value !== 0;
-
-}
-
-function ceilPowerOfTwo( value ) {
-
-	return Math.pow( 2, Math.ceil( Math.log( value ) / Math.LN2 ) );
-
-}
-
-function floorPowerOfTwo( value ) {
-
-	return Math.pow( 2, Math.floor( Math.log( value ) / Math.LN2 ) );
-
-}
-
-function setQuaternionFromProperEuler( q, a, b, c, order ) {
-
-	// Intrinsic Proper Euler Angles - see https://en.wikipedia.org/wiki/Euler_angles
-
-	// rotations are applied to the axes in the order specified by 'order'
-	// rotation by angle 'a' is applied first, then by angle 'b', then by angle 'c'
-	// angles are in radians
-
-	const cos = Math.cos;
-	const sin = Math.sin;
-
-	const c2 = cos( b / 2 );
-	const s2 = sin( b / 2 );
-
-	const c13 = cos( ( a + c ) / 2 );
-	const s13 = sin( ( a + c ) / 2 );
-
-	const c1_3 = cos( ( a - c ) / 2 );
-	const s1_3 = sin( ( a - c ) / 2 );
-
-	const c3_1 = cos( ( c - a ) / 2 );
-	const s3_1 = sin( ( c - a ) / 2 );
-
-	switch ( order ) {
-
-		case 'XYX':
-			q.set( c2 * s13, s2 * c1_3, s2 * s1_3, c2 * c13 );
-			break;
-
-		case 'YZY':
-			q.set( s2 * s1_3, c2 * s13, s2 * c1_3, c2 * c13 );
-			break;
-
-		case 'ZXZ':
-			q.set( s2 * c1_3, s2 * s1_3, c2 * s13, c2 * c13 );
-			break;
-
-		case 'XZX':
-			q.set( c2 * s13, s2 * s3_1, s2 * c3_1, c2 * c13 );
-			break;
-
-		case 'YXY':
-			q.set( s2 * c3_1, c2 * s13, s2 * s3_1, c2 * c13 );
-			break;
-
-		case 'ZYZ':
-			q.set( s2 * s3_1, s2 * c3_1, c2 * s13, c2 * c13 );
-			break;
-
-		default:
-			console.warn( 'THREE.MathUtils: .setQuaternionFromProperEuler() encountered an unknown order: ' + order );
+		yield this.x;
+		yield this.y;
 
 	}
 
@@ -6547,27 +6655,19 @@ function setQuaternionFromProperEuler( q, a, b, c, order ) {
 
 
 
-
-
-
-;// CONCATENATED MODULE: ./node_modules/three/src/math/Quaternion.js
+;// ./node_modules/three/src/math/Quaternion.js
 
 
 class Quaternion {
 
 	constructor( x = 0, y = 0, z = 0, w = 1 ) {
 
+		this.isQuaternion = true;
+
 		this._x = x;
 		this._y = y;
 		this._z = z;
 		this._w = w;
-
-	}
-
-	static slerp( qa, qb, qm, t ) {
-
-		console.warn( 'THREE.Quaternion: Static .slerp() has been deprecated. Use qm.slerpQuaternions( qa, qb, t ) instead.' );
-		return qm.slerpQuaternions( qa, qb, t );
 
 	}
 
@@ -6756,13 +6856,7 @@ class Quaternion {
 
 	}
 
-	setFromEuler( euler, update ) {
-
-		if ( ! ( euler && euler.isEuler ) ) {
-
-			throw new Error( 'THREE.Quaternion: .setFromEuler() now expects an Euler rotation rather than a Vector3 and order.' );
-
-		}
+	setFromEuler( euler, update = true ) {
 
 		const x = euler._x, y = euler._y, z = euler._z, order = euler._order;
 
@@ -6830,7 +6924,7 @@ class Quaternion {
 
 		}
 
-		if ( update !== false ) this._onChangeCallback();
+		if ( update === true ) this._onChangeCallback();
 
 		return this;
 
@@ -7048,14 +7142,7 @@ class Quaternion {
 
 	}
 
-	multiply( q, p ) {
-
-		if ( p !== undefined ) {
-
-			console.warn( 'THREE.Quaternion: .multiply() now only accepts one argument. Use .multiplyQuaternions( a, b ) instead.' );
-			return this.multiplyQuaternions( q, p );
-
-		}
+	multiply( q ) {
 
 		return this.multiplyQuaternions( this, q );
 
@@ -7132,8 +7219,7 @@ class Quaternion {
 			this._y = s * y + t * this._y;
 			this._z = s * z + t * this._z;
 
-			this.normalize();
-			this._onChangeCallback();
+			this.normalize(); // normalize calls _onChangeCallback()
 
 			return this;
 
@@ -7157,7 +7243,31 @@ class Quaternion {
 
 	slerpQuaternions( qa, qb, t ) {
 
-		this.copy( qa ).slerp( qb, t );
+		return this.copy( qa ).slerp( qb, t );
+
+	}
+
+	random() {
+
+		// sets this quaternion to a uniform random unit quaternnion
+
+		// Ken Shoemake
+		// Uniform random rotations
+		// D. Kirk, editor, Graphics Gems III, pages 124-132. Academic Press, New York, 1992.
+
+		const theta1 = 2 * Math.PI * Math.random();
+		const theta2 = 2 * Math.PI * Math.random();
+
+		const x0 = Math.random();
+		const r1 = Math.sqrt( 1 - x0 );
+		const r2 = Math.sqrt( x0 );
+
+		return this.set(
+			r1 * Math.sin( theta1 ),
+			r1 * Math.cos( theta1 ),
+			r2 * Math.sin( theta2 ),
+			r2 * Math.cos( theta2 ),
+		);
 
 	}
 
@@ -7198,7 +7308,15 @@ class Quaternion {
 		this._z = attribute.getZ( index );
 		this._w = attribute.getW( index );
 
+		this._onChangeCallback();
+
 		return this;
+
+	}
+
+	toJSON() {
+
+		return this.toArray();
 
 	}
 
@@ -7212,19 +7330,28 @@ class Quaternion {
 
 	_onChangeCallback() {}
 
+	*[ Symbol.iterator ]() {
+
+		yield this._x;
+		yield this._y;
+		yield this._z;
+		yield this._w;
+
+	}
+
 }
 
-Quaternion.prototype.isQuaternion = true;
 
 
-
-;// CONCATENATED MODULE: ./node_modules/three/src/math/Vector3.js
+;// ./node_modules/three/src/math/Vector3.js
 
 
 
 class Vector3 {
 
 	constructor( x = 0, y = 0, z = 0 ) {
+
+		Vector3.prototype.isVector3 = true;
 
 		this.x = x;
 		this.y = y;
@@ -7322,14 +7449,7 @@ class Vector3 {
 
 	}
 
-	add( v, w ) {
-
-		if ( w !== undefined ) {
-
-			console.warn( 'THREE.Vector3: .add() now only accepts one argument. Use .addVectors( a, b ) instead.' );
-			return this.addVectors( v, w );
-
-		}
+	add( v ) {
 
 		this.x += v.x;
 		this.y += v.y;
@@ -7369,14 +7489,7 @@ class Vector3 {
 
 	}
 
-	sub( v, w ) {
-
-		if ( w !== undefined ) {
-
-			console.warn( 'THREE.Vector3: .sub() now only accepts one argument. Use .subVectors( a, b ) instead.' );
-			return this.subVectors( v, w );
-
-		}
+	sub( v ) {
 
 		this.x -= v.x;
 		this.y -= v.y;
@@ -7406,14 +7519,7 @@ class Vector3 {
 
 	}
 
-	multiply( v, w ) {
-
-		if ( w !== undefined ) {
-
-			console.warn( 'THREE.Vector3: .multiply() now only accepts one argument. Use .multiplyVectors( a, b ) instead.' );
-			return this.multiplyVectors( v, w );
-
-		}
+	multiply( v ) {
 
 		this.x *= v.x;
 		this.y *= v.y;
@@ -7444,12 +7550,6 @@ class Vector3 {
 	}
 
 	applyEuler( euler ) {
-
-		if ( ! ( euler && euler.isEuler ) ) {
-
-			console.error( 'THREE.Vector3: .applyEuler() now expects an Euler rotation rather than a Vector3 and order.' );
-
-		}
 
 		return this.applyQuaternion( _quaternion.setFromEuler( euler ) );
 
@@ -7497,21 +7597,20 @@ class Vector3 {
 
 	applyQuaternion( q ) {
 
-		const x = this.x, y = this.y, z = this.z;
+		// quaternion q is assumed to have unit length
+
+		const vx = this.x, vy = this.y, vz = this.z;
 		const qx = q.x, qy = q.y, qz = q.z, qw = q.w;
 
-		// calculate quat * vector
+		// t = 2 * cross( q.xyz, v );
+		const tx = 2 * ( qy * vz - qz * vy );
+		const ty = 2 * ( qz * vx - qx * vz );
+		const tz = 2 * ( qx * vy - qy * vx );
 
-		const ix = qw * x + qy * z - qz * y;
-		const iy = qw * y + qz * x - qx * z;
-		const iz = qw * z + qx * y - qy * x;
-		const iw = - qx * x - qy * y - qz * z;
-
-		// calculate result * inverse quat
-
-		this.x = ix * qw + iw * - qx + iy * - qz - iz * - qy;
-		this.y = iy * qw + iw * - qy + iz * - qx - ix * - qz;
-		this.z = iz * qw + iw * - qz + ix * - qy - iy * - qx;
+		// v + q.w * t + cross( q.xyz, t );
+		this.x = vx + qw * tx + qy * tz - qz * ty;
+		this.y = vy + qw * ty + qz * tx - qx * tz;
+		this.z = vz + qw * tz + qx * ty - qy * tx;
 
 		return this;
 
@@ -7585,9 +7684,9 @@ class Vector3 {
 
 		// assumes min < max, componentwise
 
-		this.x = Math.max( min.x, Math.min( max.x, this.x ) );
-		this.y = Math.max( min.y, Math.min( max.y, this.y ) );
-		this.z = Math.max( min.z, Math.min( max.z, this.z ) );
+		this.x = clamp( this.x, min.x, max.x );
+		this.y = clamp( this.y, min.y, max.y );
+		this.z = clamp( this.z, min.z, max.z );
 
 		return this;
 
@@ -7595,9 +7694,9 @@ class Vector3 {
 
 	clampScalar( minVal, maxVal ) {
 
-		this.x = Math.max( minVal, Math.min( maxVal, this.x ) );
-		this.y = Math.max( minVal, Math.min( maxVal, this.y ) );
-		this.z = Math.max( minVal, Math.min( maxVal, this.z ) );
+		this.x = clamp( this.x, minVal, maxVal );
+		this.y = clamp( this.y, minVal, maxVal );
+		this.z = clamp( this.z, minVal, maxVal );
 
 		return this;
 
@@ -7607,7 +7706,7 @@ class Vector3 {
 
 		const length = this.length();
 
-		return this.divideScalar( length || 1 ).multiplyScalar( Math.max( min, Math.min( max, length ) ) );
+		return this.divideScalar( length || 1 ).multiplyScalar( clamp( length, min, max ) );
 
 	}
 
@@ -7643,9 +7742,9 @@ class Vector3 {
 
 	roundToZero() {
 
-		this.x = ( this.x < 0 ) ? Math.ceil( this.x ) : Math.floor( this.x );
-		this.y = ( this.y < 0 ) ? Math.ceil( this.y ) : Math.floor( this.y );
-		this.z = ( this.z < 0 ) ? Math.ceil( this.z ) : Math.floor( this.z );
+		this.x = Math.trunc( this.x );
+		this.y = Math.trunc( this.y );
+		this.z = Math.trunc( this.z );
 
 		return this;
 
@@ -7719,14 +7818,7 @@ class Vector3 {
 
 	}
 
-	cross( v, w ) {
-
-		if ( w !== undefined ) {
-
-			console.warn( 'THREE.Vector3: .cross() now only accepts one argument. Use .crossVectors( a, b ) instead.' );
-			return this.crossVectors( v, w );
-
-		}
+	cross( v ) {
 
 		return this.crossVectors( this, v );
 
@@ -7880,6 +7972,26 @@ class Vector3 {
 
 	}
 
+	setFromEuler( e ) {
+
+		this.x = e._x;
+		this.y = e._y;
+		this.z = e._z;
+
+		return this;
+
+	}
+
+	setFromColor( c ) {
+
+		this.x = c.r;
+		this.y = c.g;
+		this.z = c.b;
+
+		return this;
+
+	}
+
 	equals( v ) {
 
 		return ( ( v.x === this.x ) && ( v.y === this.y ) && ( v.z === this.z ) );
@@ -7906,13 +8018,7 @@ class Vector3 {
 
 	}
 
-	fromBufferAttribute( attribute, index, offset ) {
-
-		if ( offset !== undefined ) {
-
-			console.warn( 'THREE.Vector3: offset has been removed from .fromBufferAttribute().' );
-
-		}
+	fromBufferAttribute( attribute, index ) {
 
 		this.x = attribute.getX( index );
 		this.y = attribute.getY( index );
@@ -7932,19 +8038,45 @@ class Vector3 {
 
 	}
 
-}
+	randomDirection() {
 
-Vector3.prototype.isVector3 = true;
+		// https://mathworld.wolfram.com/SpherePointPicking.html
+
+		const theta = Math.random() * Math.PI * 2;
+		const u = Math.random() * 2 - 1;
+		const c = Math.sqrt( 1 - u * u );
+
+		this.x = c * Math.cos( theta );
+		this.y = u;
+		this.z = c * Math.sin( theta );
+
+		return this;
+
+	}
+
+	*[ Symbol.iterator ]() {
+
+		yield this.x;
+		yield this.y;
+		yield this.z;
+
+	}
+
+}
 
 const _vector = /*@__PURE__*/ new Vector3();
 const _quaternion = /*@__PURE__*/ new Quaternion();
 
 
 
-;// CONCATENATED MODULE: ./node_modules/three/src/math/Vector4.js
+;// ./node_modules/three/src/math/Vector4.js
+
+
 class Vector4 {
 
 	constructor( x = 0, y = 0, z = 0, w = 1 ) {
+
+		Vector4.prototype.isVector4 = true;
 
 		this.x = x;
 		this.y = y;
@@ -8078,14 +8210,7 @@ class Vector4 {
 
 	}
 
-	add( v, w ) {
-
-		if ( w !== undefined ) {
-
-			console.warn( 'THREE.Vector4: .add() now only accepts one argument. Use .addVectors( a, b ) instead.' );
-			return this.addVectors( v, w );
-
-		}
+	add( v ) {
 
 		this.x += v.x;
 		this.y += v.y;
@@ -8129,14 +8254,7 @@ class Vector4 {
 
 	}
 
-	sub( v, w ) {
-
-		if ( w !== undefined ) {
-
-			console.warn( 'THREE.Vector4: .sub() now only accepts one argument. Use .subVectors( a, b ) instead.' );
-			return this.subVectors( v, w );
-
-		}
+	sub( v ) {
 
 		this.x -= v.x;
 		this.y -= v.y;
@@ -8200,6 +8318,17 @@ class Vector4 {
 		this.y = e[ 1 ] * x + e[ 5 ] * y + e[ 9 ] * z + e[ 13 ] * w;
 		this.z = e[ 2 ] * x + e[ 6 ] * y + e[ 10 ] * z + e[ 14 ] * w;
 		this.w = e[ 3 ] * x + e[ 7 ] * y + e[ 11 ] * z + e[ 15 ] * w;
+
+		return this;
+
+	}
+
+	divide( v ) {
+
+		this.x /= v.x;
+		this.y /= v.y;
+		this.z /= v.z;
+		this.w /= v.w;
 
 		return this;
 
@@ -8369,6 +8498,19 @@ class Vector4 {
 
 	}
 
+	setFromMatrixPosition( m ) {
+
+		const e = m.elements;
+
+		this.x = e[ 12 ];
+		this.y = e[ 13 ];
+		this.z = e[ 14 ];
+		this.w = e[ 15 ];
+
+		return this;
+
+	}
+
 	min( v ) {
 
 		this.x = Math.min( this.x, v.x );
@@ -8395,10 +8537,10 @@ class Vector4 {
 
 		// assumes min < max, componentwise
 
-		this.x = Math.max( min.x, Math.min( max.x, this.x ) );
-		this.y = Math.max( min.y, Math.min( max.y, this.y ) );
-		this.z = Math.max( min.z, Math.min( max.z, this.z ) );
-		this.w = Math.max( min.w, Math.min( max.w, this.w ) );
+		this.x = clamp( this.x, min.x, max.x );
+		this.y = clamp( this.y, min.y, max.y );
+		this.z = clamp( this.z, min.z, max.z );
+		this.w = clamp( this.w, min.w, max.w );
 
 		return this;
 
@@ -8406,10 +8548,10 @@ class Vector4 {
 
 	clampScalar( minVal, maxVal ) {
 
-		this.x = Math.max( minVal, Math.min( maxVal, this.x ) );
-		this.y = Math.max( minVal, Math.min( maxVal, this.y ) );
-		this.z = Math.max( minVal, Math.min( maxVal, this.z ) );
-		this.w = Math.max( minVal, Math.min( maxVal, this.w ) );
+		this.x = clamp( this.x, minVal, maxVal );
+		this.y = clamp( this.y, minVal, maxVal );
+		this.z = clamp( this.z, minVal, maxVal );
+		this.w = clamp( this.w, minVal, maxVal );
 
 		return this;
 
@@ -8419,7 +8561,7 @@ class Vector4 {
 
 		const length = this.length();
 
-		return this.divideScalar( length || 1 ).multiplyScalar( Math.max( min, Math.min( max, length ) ) );
+		return this.divideScalar( length || 1 ).multiplyScalar( clamp( length, min, max ) );
 
 	}
 
@@ -8458,10 +8600,10 @@ class Vector4 {
 
 	roundToZero() {
 
-		this.x = ( this.x < 0 ) ? Math.ceil( this.x ) : Math.floor( this.x );
-		this.y = ( this.y < 0 ) ? Math.ceil( this.y ) : Math.floor( this.y );
-		this.z = ( this.z < 0 ) ? Math.ceil( this.z ) : Math.floor( this.z );
-		this.w = ( this.w < 0 ) ? Math.ceil( this.w ) : Math.floor( this.w );
+		this.x = Math.trunc( this.x );
+		this.y = Math.trunc( this.y );
+		this.z = Math.trunc( this.z );
+		this.w = Math.trunc( this.w );
 
 		return this;
 
@@ -8564,13 +8706,7 @@ class Vector4 {
 
 	}
 
-	fromBufferAttribute( attribute, index, offset ) {
-
-		if ( offset !== undefined ) {
-
-			console.warn( 'THREE.Vector4: offset has been removed from .fromBufferAttribute().' );
-
-		}
+	fromBufferAttribute( attribute, index ) {
 
 		this.x = attribute.getX( index );
 		this.y = attribute.getY( index );
@@ -8592,16 +8728,25 @@ class Vector4 {
 
 	}
 
+	*[ Symbol.iterator ]() {
+
+		yield this.x;
+		yield this.y;
+		yield this.z;
+		yield this.w;
+
+	}
+
 }
 
-Vector4.prototype.isVector4 = true;
 
 
-
-;// CONCATENATED MODULE: ./node_modules/three/src/math/Matrix3.js
+;// ./node_modules/three/src/math/Matrix3.js
 class Matrix3 {
 
-	constructor() {
+	constructor( n11, n12, n13, n21, n22, n23, n31, n32, n33 ) {
+
+		Matrix3.prototype.isMatrix3 = true;
 
 		this.elements = [
 
@@ -8611,9 +8756,9 @@ class Matrix3 {
 
 		];
 
-		if ( arguments.length > 0 ) {
+		if ( n11 !== undefined ) {
 
-			console.error( 'THREE.Matrix3: the constructor no longer reads arguments. use .set() instead.' );
+			this.set( n11, n12, n13, n21, n22, n23, n31, n32, n33 );
 
 		}
 
@@ -8836,12 +8981,11 @@ class Matrix3 {
 
 	}
 
+	//
+
 	scale( sx, sy ) {
 
-		const te = this.elements;
-
-		te[ 0 ] *= sx; te[ 3 ] *= sx; te[ 6 ] *= sx;
-		te[ 1 ] *= sy; te[ 4 ] *= sy; te[ 7 ] *= sy;
+		this.premultiply( _m3.makeScale( sx, sy ) );
 
 		return this;
 
@@ -8849,21 +8993,7 @@ class Matrix3 {
 
 	rotate( theta ) {
 
-		const c = Math.cos( theta );
-		const s = Math.sin( theta );
-
-		const te = this.elements;
-
-		const a11 = te[ 0 ], a12 = te[ 3 ], a13 = te[ 6 ];
-		const a21 = te[ 1 ], a22 = te[ 4 ], a23 = te[ 7 ];
-
-		te[ 0 ] = c * a11 + s * a21;
-		te[ 3 ] = c * a12 + s * a22;
-		te[ 6 ] = c * a13 + s * a23;
-
-		te[ 1 ] = - s * a11 + c * a21;
-		te[ 4 ] = - s * a12 + c * a22;
-		te[ 7 ] = - s * a13 + c * a23;
+		this.premultiply( _m3.makeRotation( - theta ) );
 
 		return this;
 
@@ -8871,14 +9001,76 @@ class Matrix3 {
 
 	translate( tx, ty ) {
 
-		const te = this.elements;
-
-		te[ 0 ] += tx * te[ 2 ]; te[ 3 ] += tx * te[ 5 ]; te[ 6 ] += tx * te[ 8 ];
-		te[ 1 ] += ty * te[ 2 ]; te[ 4 ] += ty * te[ 5 ]; te[ 7 ] += ty * te[ 8 ];
+		this.premultiply( _m3.makeTranslation( tx, ty ) );
 
 		return this;
 
 	}
+
+	// for 2D Transforms
+
+	makeTranslation( x, y ) {
+
+		if ( x.isVector2 ) {
+
+			this.set(
+
+				1, 0, x.x,
+				0, 1, x.y,
+				0, 0, 1
+
+			);
+
+		} else {
+
+			this.set(
+
+				1, 0, x,
+				0, 1, y,
+				0, 0, 1
+
+			);
+
+		}
+
+		return this;
+
+	}
+
+	makeRotation( theta ) {
+
+		// counterclockwise
+
+		const c = Math.cos( theta );
+		const s = Math.sin( theta );
+
+		this.set(
+
+			c, - s, 0,
+			s, c, 0,
+			0, 0, 1
+
+		);
+
+		return this;
+
+	}
+
+	makeScale( x, y ) {
+
+		this.set(
+
+			x, 0, 0,
+			0, y, 0,
+			0, 0, 1
+
+		);
+
+		return this;
+
+	}
+
+	//
 
 	equals( matrix ) {
 
@@ -8935,16 +9127,237 @@ class Matrix3 {
 
 }
 
-Matrix3.prototype.isMatrix3 = true;
+const _m3 = /*@__PURE__*/ new Matrix3();
 
 
 
-;// CONCATENATED MODULE: ./node_modules/three/src/math/Matrix4.js
+;// ./node_modules/three/src/constants.js
+const REVISION = '173';
+
+const MOUSE = { LEFT: 0, MIDDLE: 1, RIGHT: 2, ROTATE: 0, DOLLY: 1, PAN: 2 };
+const TOUCH = { ROTATE: 0, PAN: 1, DOLLY_PAN: 2, DOLLY_ROTATE: 3 };
+const CullFaceNone = 0;
+const CullFaceBack = 1;
+const CullFaceFront = 2;
+const CullFaceFrontBack = 3;
+const BasicShadowMap = 0;
+const PCFShadowMap = 1;
+const PCFSoftShadowMap = 2;
+const VSMShadowMap = 3;
+const FrontSide = 0;
+const BackSide = 1;
+const DoubleSide = 2;
+const NoBlending = 0;
+const NormalBlending = 1;
+const AdditiveBlending = 2;
+const SubtractiveBlending = 3;
+const MultiplyBlending = 4;
+const CustomBlending = 5;
+const AddEquation = 100;
+const SubtractEquation = 101;
+const ReverseSubtractEquation = 102;
+const MinEquation = 103;
+const MaxEquation = 104;
+const ZeroFactor = 200;
+const OneFactor = 201;
+const SrcColorFactor = 202;
+const OneMinusSrcColorFactor = 203;
+const SrcAlphaFactor = 204;
+const OneMinusSrcAlphaFactor = 205;
+const DstAlphaFactor = 206;
+const OneMinusDstAlphaFactor = 207;
+const DstColorFactor = 208;
+const OneMinusDstColorFactor = 209;
+const SrcAlphaSaturateFactor = 210;
+const ConstantColorFactor = 211;
+const OneMinusConstantColorFactor = 212;
+const ConstantAlphaFactor = 213;
+const OneMinusConstantAlphaFactor = 214;
+const NeverDepth = 0;
+const AlwaysDepth = 1;
+const LessDepth = 2;
+const LessEqualDepth = 3;
+const EqualDepth = 4;
+const GreaterEqualDepth = 5;
+const GreaterDepth = 6;
+const NotEqualDepth = 7;
+const MultiplyOperation = 0;
+const MixOperation = 1;
+const AddOperation = 2;
+const NoToneMapping = 0;
+const LinearToneMapping = 1;
+const ReinhardToneMapping = 2;
+const CineonToneMapping = 3;
+const ACESFilmicToneMapping = 4;
+const CustomToneMapping = 5;
+const AgXToneMapping = 6;
+const NeutralToneMapping = 7;
+const AttachedBindMode = 'attached';
+const DetachedBindMode = 'detached';
+
+const UVMapping = 300;
+const CubeReflectionMapping = 301;
+const CubeRefractionMapping = 302;
+const EquirectangularReflectionMapping = 303;
+const EquirectangularRefractionMapping = 304;
+const CubeUVReflectionMapping = 306;
+const RepeatWrapping = 1000;
+const ClampToEdgeWrapping = 1001;
+const MirroredRepeatWrapping = 1002;
+const NearestFilter = 1003;
+const NearestMipmapNearestFilter = 1004;
+const NearestMipMapNearestFilter = 1004;
+const NearestMipmapLinearFilter = 1005;
+const NearestMipMapLinearFilter = 1005;
+const LinearFilter = 1006;
+const LinearMipmapNearestFilter = 1007;
+const LinearMipMapNearestFilter = 1007;
+const LinearMipmapLinearFilter = 1008;
+const LinearMipMapLinearFilter = 1008;
+const UnsignedByteType = 1009;
+const ByteType = 1010;
+const ShortType = 1011;
+const UnsignedShortType = 1012;
+const IntType = 1013;
+const UnsignedIntType = 1014;
+const FloatType = 1015;
+const HalfFloatType = 1016;
+const UnsignedShort4444Type = 1017;
+const UnsignedShort5551Type = 1018;
+const UnsignedInt248Type = 1020;
+const UnsignedInt5999Type = 35902;
+const AlphaFormat = 1021;
+const RGBFormat = 1022;
+const RGBAFormat = 1023;
+const LuminanceFormat = 1024;
+const LuminanceAlphaFormat = 1025;
+const DepthFormat = 1026;
+const DepthStencilFormat = 1027;
+const RedFormat = 1028;
+const RedIntegerFormat = 1029;
+const RGFormat = 1030;
+const RGIntegerFormat = 1031;
+const RGBIntegerFormat = 1032;
+const RGBAIntegerFormat = 1033;
+
+const RGB_S3TC_DXT1_Format = 33776;
+const RGBA_S3TC_DXT1_Format = 33777;
+const RGBA_S3TC_DXT3_Format = 33778;
+const RGBA_S3TC_DXT5_Format = 33779;
+const RGB_PVRTC_4BPPV1_Format = 35840;
+const RGB_PVRTC_2BPPV1_Format = 35841;
+const RGBA_PVRTC_4BPPV1_Format = 35842;
+const RGBA_PVRTC_2BPPV1_Format = 35843;
+const RGB_ETC1_Format = 36196;
+const RGB_ETC2_Format = 37492;
+const RGBA_ETC2_EAC_Format = 37496;
+const RGBA_ASTC_4x4_Format = 37808;
+const RGBA_ASTC_5x4_Format = 37809;
+const RGBA_ASTC_5x5_Format = 37810;
+const RGBA_ASTC_6x5_Format = 37811;
+const RGBA_ASTC_6x6_Format = 37812;
+const RGBA_ASTC_8x5_Format = 37813;
+const RGBA_ASTC_8x6_Format = 37814;
+const RGBA_ASTC_8x8_Format = 37815;
+const RGBA_ASTC_10x5_Format = 37816;
+const RGBA_ASTC_10x6_Format = 37817;
+const RGBA_ASTC_10x8_Format = 37818;
+const RGBA_ASTC_10x10_Format = 37819;
+const RGBA_ASTC_12x10_Format = 37820;
+const RGBA_ASTC_12x12_Format = 37821;
+const RGBA_BPTC_Format = 36492;
+const RGB_BPTC_SIGNED_Format = 36494;
+const RGB_BPTC_UNSIGNED_Format = 36495;
+const RED_RGTC1_Format = 36283;
+const SIGNED_RED_RGTC1_Format = 36284;
+const RED_GREEN_RGTC2_Format = 36285;
+const SIGNED_RED_GREEN_RGTC2_Format = 36286;
+const LoopOnce = 2200;
+const LoopRepeat = 2201;
+const LoopPingPong = 2202;
+const InterpolateDiscrete = 2300;
+const InterpolateLinear = 2301;
+const InterpolateSmooth = 2302;
+const ZeroCurvatureEnding = 2400;
+const ZeroSlopeEnding = 2401;
+const WrapAroundEnding = 2402;
+const NormalAnimationBlendMode = 2500;
+const AdditiveAnimationBlendMode = 2501;
+const TrianglesDrawMode = 0;
+const TriangleStripDrawMode = 1;
+const TriangleFanDrawMode = 2;
+const BasicDepthPacking = 3200;
+const RGBADepthPacking = 3201;
+const RGBDepthPacking = 3202;
+const RGDepthPacking = 3203;
+const TangentSpaceNormalMap = 0;
+const ObjectSpaceNormalMap = 1;
+
+// Color space string identifiers, matching CSS Color Module Level 4 and WebGPU names where available.
+const NoColorSpace = '';
+const SRGBColorSpace = 'srgb';
+const LinearSRGBColorSpace = 'srgb-linear';
+
+const LinearTransfer = 'linear';
+const SRGBTransfer = 'srgb';
+
+const ZeroStencilOp = 0;
+const KeepStencilOp = 7680;
+const ReplaceStencilOp = 7681;
+const IncrementStencilOp = 7682;
+const DecrementStencilOp = 7683;
+const IncrementWrapStencilOp = 34055;
+const DecrementWrapStencilOp = 34056;
+const InvertStencilOp = 5386;
+
+const NeverStencilFunc = 512;
+const LessStencilFunc = 513;
+const EqualStencilFunc = 514;
+const LessEqualStencilFunc = 515;
+const GreaterStencilFunc = 516;
+const NotEqualStencilFunc = 517;
+const GreaterEqualStencilFunc = 518;
+const AlwaysStencilFunc = 519;
+
+const NeverCompare = 512;
+const LessCompare = 513;
+const EqualCompare = 514;
+const LessEqualCompare = 515;
+const GreaterCompare = 516;
+const NotEqualCompare = 517;
+const GreaterEqualCompare = 518;
+const AlwaysCompare = 519;
+
+const StaticDrawUsage = 35044;
+const DynamicDrawUsage = 35048;
+const StreamDrawUsage = 35040;
+const StaticReadUsage = 35045;
+const DynamicReadUsage = 35049;
+const StreamReadUsage = 35041;
+const StaticCopyUsage = 35046;
+const DynamicCopyUsage = 35050;
+const StreamCopyUsage = 35042;
+
+const GLSL1 = '100';
+const GLSL3 = '300 es';
+
+const WebGLCoordinateSystem = 2000;
+const WebGPUCoordinateSystem = 2001;
+
+const TimestampQuery = {
+	COMPUTE: 'compute',
+	RENDER: 'render'
+};
+
+;// ./node_modules/three/src/math/Matrix4.js
+
 
 
 class Matrix4 {
 
-	constructor() {
+	constructor( n11, n12, n13, n14, n21, n22, n23, n24, n31, n32, n33, n34, n41, n42, n43, n44 ) {
+
+		Matrix4.prototype.isMatrix4 = true;
 
 		this.elements = [
 
@@ -8955,9 +9368,9 @@ class Matrix4 {
 
 		];
 
-		if ( arguments.length > 0 ) {
+		if ( n11 !== undefined ) {
 
-			console.error( 'THREE.Matrix4: the constructor no longer reads arguments. use .set() instead.' );
+			this.set( n11, n12, n13, n14, n21, n22, n23, n24, n31, n32, n33, n34, n41, n42, n43, n44 );
 
 		}
 
@@ -9099,12 +9512,6 @@ class Matrix4 {
 	}
 
 	makeRotationFromEuler( euler ) {
-
-		if ( ! ( euler && euler.isEuler ) ) {
-
-			console.error( 'THREE.Matrix4: .makeRotationFromEuler() now expects a Euler rotation rather than a Vector3 and order.' );
-
-		}
 
 		const te = this.elements;
 
@@ -9279,14 +9686,7 @@ class Matrix4 {
 
 	}
 
-	multiply( m, n ) {
-
-		if ( n !== undefined ) {
-
-			console.warn( 'THREE.Matrix4: .multiply() now only accepts one argument. Use .multiplyMatrices( a, b ) instead.' );
-			return this.multiplyMatrices( m, n );
-
-		}
+	multiply( m ) {
 
 		return this.multiplyMatrices( this, m );
 
@@ -9513,14 +9913,29 @@ class Matrix4 {
 
 	makeTranslation( x, y, z ) {
 
-		this.set(
+		if ( x.isVector3 ) {
 
-			1, 0, 0, x,
-			0, 1, 0, y,
-			0, 0, 1, z,
-			0, 0, 0, 1
+			this.set(
 
-		);
+				1, 0, 0, x.x,
+				0, 1, 0, x.y,
+				0, 0, 1, x.z,
+				0, 0, 0, 1
+
+			);
+
+		} else {
+
+			this.set(
+
+				1, 0, 0, x,
+				0, 1, 0, y,
+				0, 0, 1, z,
+				0, 0, 0, 1
+
+			);
+
+		}
 
 		return this;
 
@@ -9711,13 +10126,7 @@ class Matrix4 {
 
 	}
 
-	makePerspective( left, right, top, bottom, near, far ) {
-
-		if ( far === undefined ) {
-
-			console.warn( 'THREE.Matrix4: .makePerspective() has been redefined and has a new signature. Please check the docs.' );
-
-		}
+	makePerspective( left, right, top, bottom, near, far, coordinateSystem = WebGLCoordinateSystem ) {
 
 		const te = this.elements;
 		const x = 2 * near / ( right - left );
@@ -9725,19 +10134,35 @@ class Matrix4 {
 
 		const a = ( right + left ) / ( right - left );
 		const b = ( top + bottom ) / ( top - bottom );
-		const c = - ( far + near ) / ( far - near );
-		const d = - 2 * far * near / ( far - near );
 
-		te[ 0 ] = x;	te[ 4 ] = 0;	te[ 8 ] = a;	te[ 12 ] = 0;
-		te[ 1 ] = 0;	te[ 5 ] = y;	te[ 9 ] = b;	te[ 13 ] = 0;
-		te[ 2 ] = 0;	te[ 6 ] = 0;	te[ 10 ] = c;	te[ 14 ] = d;
+		let c, d;
+
+		if ( coordinateSystem === WebGLCoordinateSystem ) {
+
+			c = - ( far + near ) / ( far - near );
+			d = ( - 2 * far * near ) / ( far - near );
+
+		} else if ( coordinateSystem === WebGPUCoordinateSystem ) {
+
+			c = - far / ( far - near );
+			d = ( - far * near ) / ( far - near );
+
+		} else {
+
+			throw new Error( 'THREE.Matrix4.makePerspective(): Invalid coordinate system: ' + coordinateSystem );
+
+		}
+
+		te[ 0 ] = x;	te[ 4 ] = 0;	te[ 8 ] = a; 	te[ 12 ] = 0;
+		te[ 1 ] = 0;	te[ 5 ] = y;	te[ 9 ] = b; 	te[ 13 ] = 0;
+		te[ 2 ] = 0;	te[ 6 ] = 0;	te[ 10 ] = c; 	te[ 14 ] = d;
 		te[ 3 ] = 0;	te[ 7 ] = 0;	te[ 11 ] = - 1;	te[ 15 ] = 0;
 
 		return this;
 
 	}
 
-	makeOrthographic( left, right, top, bottom, near, far ) {
+	makeOrthographic( left, right, top, bottom, near, far, coordinateSystem = WebGLCoordinateSystem ) {
 
 		const te = this.elements;
 		const w = 1.0 / ( right - left );
@@ -9746,12 +10171,29 @@ class Matrix4 {
 
 		const x = ( right + left ) * w;
 		const y = ( top + bottom ) * h;
-		const z = ( far + near ) * p;
 
-		te[ 0 ] = 2 * w;	te[ 4 ] = 0;	te[ 8 ] = 0;	te[ 12 ] = - x;
-		te[ 1 ] = 0;	te[ 5 ] = 2 * h;	te[ 9 ] = 0;	te[ 13 ] = - y;
-		te[ 2 ] = 0;	te[ 6 ] = 0;	te[ 10 ] = - 2 * p;	te[ 14 ] = - z;
-		te[ 3 ] = 0;	te[ 7 ] = 0;	te[ 11 ] = 0;	te[ 15 ] = 1;
+		let z, zInv;
+
+		if ( coordinateSystem === WebGLCoordinateSystem ) {
+
+			z = ( far + near ) * p;
+			zInv = - 2 * p;
+
+		} else if ( coordinateSystem === WebGPUCoordinateSystem ) {
+
+			z = near * p;
+			zInv = - 1 * p;
+
+		} else {
+
+			throw new Error( 'THREE.Matrix4.makeOrthographic(): Invalid coordinate system: ' + coordinateSystem );
+
+		}
+
+		te[ 0 ] = 2 * w;	te[ 4 ] = 0;		te[ 8 ] = 0; 		te[ 12 ] = - x;
+		te[ 1 ] = 0; 		te[ 5 ] = 2 * h;	te[ 9 ] = 0; 		te[ 13 ] = - y;
+		te[ 2 ] = 0; 		te[ 6 ] = 0;		te[ 10 ] = zInv;	te[ 14 ] = - z;
+		te[ 3 ] = 0; 		te[ 7 ] = 0;		te[ 11 ] = 0;		te[ 15 ] = 1;
 
 		return this;
 
@@ -9814,8 +10256,6 @@ class Matrix4 {
 
 }
 
-Matrix4.prototype.isMatrix4 = true;
-
 const _v1 = /*@__PURE__*/ new Vector3();
 const _m1 = /*@__PURE__*/ new Matrix4();
 const _zero = /*@__PURE__*/ new Vector3( 0, 0, 0 );
@@ -9826,7 +10266,7 @@ const _z = /*@__PURE__*/ new Vector3();
 
 
 
-;// CONCATENATED MODULE: ./src/glsl/decl.js
+;// ./src/glsl/decl.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -10068,11 +10508,11 @@ class Definition {
   }
 }
 
-;// CONCATENATED MODULE: ./src/glsl/constants.js
+;// ./src/glsl/constants.js
 const SHADOW_ARG = "_i_o";
 const RETURN_ARG = "return";
 
-;// CONCATENATED MODULE: ./src/glsl/parse.js
+;// ./src/glsl/parse.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -10373,7 +10813,7 @@ const parse_tick = function () {
   };
 };
 
-;// CONCATENATED MODULE: ./src/glsl/generate.js
+;// ./src/glsl/generate.js
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -10773,13 +11213,13 @@ function hoist(code) {
   return lines.join("\n");
 }
 
-;// CONCATENATED MODULE: ./src/glsl/index.js
+;// ./src/glsl/index.js
 
 
 
 
 
-;// CONCATENATED MODULE: ./src/index.js
+;// ./src/index.js
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -10799,7 +11239,7 @@ const { Snippet: src_Snippet } = linker_namespaceObject;
 
 const src_merge = function (a, b = {}) {
   const out = {};
-  for (let key in a) {
+  for (const key in a) {
     out[key] = b[key] || a[key];
   }
   return out;
