@@ -7,11 +7,11 @@
  */
 // AST node parsers
 
-import { Vector2 } from "three/src/math/Vector2.js";
-import { Vector3 } from "three/src/math/Vector3.js";
-import { Vector4 } from "three/src/math/Vector4.js";
-import { Matrix3 } from "three/src/math/Matrix3.js";
-import { Matrix4 } from "three/src/math/Matrix4.js";
+import { Vector2 } from "three";
+import { Vector3 } from "three";
+import { Vector4 } from "three";
+import { Matrix3 } from "three";
+import { Matrix4 } from "three";
 
 export const decl = {};
 

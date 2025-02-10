@@ -9,8 +9,8 @@
   Fetches snippets once, clones for reuse
   Inline code is hashed to avoid bloat
 */
-import { queue } from "./queue";
-import { hash } from "./hash";
+import { queue } from "./queue.js";
+import { hash } from "./hash.js";
 
 export const cache = function (fetch) {
   const cached = {};

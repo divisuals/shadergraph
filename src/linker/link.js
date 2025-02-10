@@ -6,8 +6,8 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import * as Graph from "../graph";
-import * as Priority from "./priority";
+import * as Graph from "../graph/index.js";
+import * as Priority from "./priority.js";
 
 /*
  Callback linker

@@ -6,7 +6,7 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import { hash } from "../factory/hash";
+import { hash } from "../factory/hash.js";
 
 const trim = (string) => ("" + string).replace(/^\s+|\s+$/g, "");
 

@@ -5,8 +5,8 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import { Snippet } from "./snippet";
-import { assemble } from "./assemble";
+import { Snippet } from "./snippet.js";
+import { assemble } from "./assemble.js";
 
 /*
   Program assembly model

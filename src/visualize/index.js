@@ -6,8 +6,8 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 
-import { serialize as _serialize } from "./serialize";
-import * as _markup from "./markup";
+import { serialize as _serialize } from "./serialize.js";
+import * as _markup from "./markup.js";
 
 export const serialize = _serialize;
 export const markup = _markup;

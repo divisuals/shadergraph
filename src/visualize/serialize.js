@@ -6,7 +6,7 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 // Dump graph for debug/visualization purposes
-import * as Block from "../block";
+import * as Block from "../block/index.js";
 
 export const serialize = function (graph) {
   const nodes = [];

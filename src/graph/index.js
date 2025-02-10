@@ -1,6 +1,6 @@
-import { Graph } from "./graph";
+import { Graph } from "./graph.js";
 export const { IN, OUT } = Graph;
 
-export * from "./graph";
-export * from "./node";
-export * from "./outlet";
+export * from "./graph.js";
+export * from "./node.js";
+export * from "./outlet.js";

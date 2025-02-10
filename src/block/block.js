@@ -9,8 +9,8 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 
-import * as Graph from "../graph";
-import { Program, Layout } from "../linker";
+import * as Graph from "../graph/index.js";
+import { Program, Layout } from "../linker/index.js";
 
 const debug = false;
 

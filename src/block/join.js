@@ -5,7 +5,7 @@
  * DS205: Consider reworking code to avoid use of IIFEs
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import { Block } from "./block";
+import { Block } from "./block.js";
 
 /*
   Join multiple disconnected nodes

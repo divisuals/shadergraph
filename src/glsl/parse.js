@@ -9,8 +9,8 @@
  */
 import tokenize from "glsl-tokenizer/string";
 import parser from "@sicmutils/glsl-parser/direct";
-import { decl } from "./decl";
-import { SHADOW_ARG, RETURN_ARG } from "./constants";
+import { decl } from "./decl.js";
+import { SHADOW_ARG, RETURN_ARG } from "./constants.js";
 
 let debug = false;
 

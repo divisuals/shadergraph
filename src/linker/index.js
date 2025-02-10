@@ -1,10 +1,10 @@
-import { Snippet } from "./snippet";
+import { Snippet } from "./snippet.js";
 
 export const { load } = Snippet;
 
-export * from "./snippet";
-export * from "./program";
-export * from "./layout";
-export * from "./assemble";
-export * from "./link";
-export * from "./priority";
+export * from "./snippet.js";
+export * from "./program.js";
+export * from "./layout.js";
+export * from "./assemble.js";
+export * from "./link.js";
+export * from "./priority.js";

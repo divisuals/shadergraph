@@ -4,12 +4,12 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import { Block } from "./block";
-import * as Factory from "./factory";
-import * as GLSL from "./glsl";
-import * as Graph from "./graph";
-import * as Linker from "./linker";
-import * as Visualize from "./visualize";
+import { Block } from "./block/index.js";
+import * as Factory from "./factory/index.js";
+import * as GLSL from "./glsl/index.js";
+import * as Graph from "./graph/index.js";
+import * as Linker from "./linker/index.js";
+import * as Visualize from "./visualize/index.js";
 
 const { library, cache } = Factory;
 export const { visualize, inspect } = Visualize;

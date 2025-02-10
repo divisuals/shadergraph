@@ -6,8 +6,8 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import { Graph } from "./graph";
-import { Outlet } from "./outlet";
+import { Graph } from "./graph.js";
+import { Outlet } from "./outlet.js";
 
 /*
  Node in graph.

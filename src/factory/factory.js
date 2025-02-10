@@ -6,9 +6,9 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import { Graph } from "../graph";
-import * as Block from "../block";
-import * as Visualize from "../visualize";
+import { Graph } from "../graph/index.js";
+import * as Block from "../block/index.js";
+import * as Visualize from "../visualize/index.js";
 
 /*
   Chainable factory

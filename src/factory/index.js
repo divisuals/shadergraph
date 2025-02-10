@@ -1,7 +1,7 @@
-export * from "./factory";
-export * from "./material";
+export * from "./factory.js";
+export * from "./material.js";
 
-export * from "./library";
-export * from "./cache";
-export * from "./queue";
-export * from "./hash";
+export * from "./library.js";
+export * from "./cache.js";
+export * from "./queue.js";
+export * from "./hash.js";

@@ -5,7 +5,7 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 
-import * as Visualize from "../visualize";
+import * as Visualize from "../visualize/index.js";
 
 const debug = false;
 

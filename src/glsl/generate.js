@@ -7,8 +7,8 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 
-import * as Graph from "../graph";
-import * as $ from "./constants";
+import * as Graph from "../graph/index.js";
+import * as $ from "./constants.js";
 
 /*
   GLSL code generator for compiler and linker stubs
