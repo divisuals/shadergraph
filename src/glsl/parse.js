@@ -7,8 +7,8 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import tokenize from "glsl-tokenizer/string";
-import parser from "@sicmutils/glsl-parser/direct";
+import tokenize from "glsl-tokenizer/string.js";
+import parser from "@sicmutils/glsl-parser/direct.js";
 import { decl } from "./decl.js";
 import { SHADOW_ARG, RETURN_ARG } from "./constants.js";
 
